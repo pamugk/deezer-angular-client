@@ -1,27 +1,7 @@
-# DeezerAngularClient
+# Неофициальный программный комплекс Deezer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Данный репозиторий предназначен для хранения неофициальной реализации клиентского приложения сервиса потоковой трансляции музыки [Deezer](https://www.deezer.com "Официальный сайт Deezer") с использованием платформы [Angular](https://angular.io/ "Официальный сайт Angular").  
+Программный комплекс разрабатывается исключительно в самообразовательных целях (а если получится что-то стоящее, то и для личного использования), и не предназначено для коммерческого использования.
+Клиентское приложение Deezer предполагается реализовать с использованием Angular -- платформы для разработки веб-приложений. Пока что клиент будет работать как локальный сайт, в дальнейшем, возможно, будет осуществлена попытка доработки до настольного приложения (без использования Electron).  
+Для взаимодействия с API Deezer решено использовать официальный [Deezer JavaScript SDK](https://developers.deezer.com/sdk/javascript), чтобы были доступны для использования как можно больше возможностей API, в том числе и воспроизведение музыки (благо взаимодействие кода на TypeScript с кодом на JavaScript допустимо).  
+Так как при разработке используется TypeScript, также разработаны классы данных для объектов, описанных в [спецификации API Deezer](https://developers.deezer.com/api).
