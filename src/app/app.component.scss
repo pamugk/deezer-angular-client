@@ -1,20 +1,31 @@
+a {
+    cursor: pointer;
+}
+
 .deezer-logo {
-    background-size: 100% 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: inline-block;
     height: 32px;
-    width: 125px;
+    margin: 1rem;
     transition-duration: 0s;
     transition-property: background-image;
     transition-timing-function: linear;
     transition-delay: .1s;
+    width: 125px;
 
     &-day {
         @extend .deezer-logo;
-        background-image: url("/assets/deezer/logotype/DIGITAL RGB/SVG/Deezer_Logo_RVB_Black.svg");
+        background-image: url(/assets/deezer/logotype/DIGITAL_RGB/SVG/Deezer_Logo_RVB_Black.svg);
     }
     
     &-night {
         @extend .deezer-logo;
-        background-image: url("/assets/deezer/logotype/DIGITAL RGB/SVG/Deezer_Logo_RVB_White.svg");
+        background-image: url(/assets/deezer/logotype/DIGITAL_RGB/SVG/Deezer_Logo_RVB_White.svg);
     }
+}
+
+main {
+    display: flex;
+    flex-direction: row;
 }
