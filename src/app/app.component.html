@@ -2,24 +2,24 @@
   <aside>
     <a class="deezer-logo-day"></a>
     <ul>
-      <li><a>Музыка</a></li>
-      <li><a>Исследуйте</a></li>
+      <li><a href="/"><i class="fas fa-music"></i> Музыка</a></li>
+      <li><a href="/explore"><i class="fas fa-th-large"></i> Исследуйте</a></li>
       <li>
-        <a>Избранное</a>
+        <a href="/profile"><i class="fas fa-heart"></i> Избранное</a>
         <ul>
-          <li><a>Любимые треки</a></li>
-          <li><a>Плейлисты</a></li>
-          <li><a>Альбомы</a></li>
-          <li><a>Исполнители</a></li>
+          <li><a href="/profile/tracks">Любимые треки</a></li>
+          <li><a href="/profile/playlists">Плейлисты</a></li>
+          <li><a href="/profile/albums">Альбомы</a></li>
+          <li><a href="/profile/artists">Исполнители</a></li>
         </ul>
       </li>
     </ul>
   </aside>
-  Page
+  <nav>
+    <router-outlet></router-outlet>
+  </nav>
 </main>
 <footer>
   <app-player>
   </app-player>
 </footer>
-
-<router-outlet></router-outlet>

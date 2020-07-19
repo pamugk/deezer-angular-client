@@ -5,19 +5,28 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlayerComponent } from './player/player.component';
-
-import { PagesModule } from './pages/pages.module';
+import { ExplorePageComponent } from './explore-page/explore-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { SearchPageComponent } from './search-page/search-page.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { AccountPageComponent } from './account-page/account-page.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayerComponent
+    PlayerComponent,
+    ExplorePageComponent,
+    HomePageComponent,
+    SearchPageComponent,
+    NotFoundPageComponent,
+    AccountPageComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
-    PagesModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
