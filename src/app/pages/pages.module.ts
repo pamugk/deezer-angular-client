@@ -10,17 +10,23 @@ import { ArtistComponent } from './artist/artist.component';
 import { ChannelComponent } from './channel/channel.component';
 import { ChannelsComponent } from './channels/channels.component';
 
-
-
 @NgModule({
   declarations: [
-    HomeComponent, AccountComponent, 
-    ProfileComponent, SearchComponent, 
-    NotFoundComponent, AlbumComponent, 
+    AccountComponent, AlbumComponent,
     ArtistComponent, ChannelComponent,
-    ChannelsComponent],
+    ChannelsComponent, HomeComponent, 
+    NotFoundComponent, ProfileComponent,
+    SearchComponent
+  ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    AccountComponent, AlbumComponent,
+    ArtistComponent, ChannelComponent,
+    ChannelsComponent, HomeComponent, 
+    NotFoundComponent, ProfileComponent,
+    SearchComponent
   ]
 })
 export class PagesModule { }
