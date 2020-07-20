@@ -1,3 +1,5 @@
+@import '../colors.scss';
+
 .content {
     grid-row-start: 2;
     grid-column-start: 2;
@@ -42,6 +44,12 @@
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 3;
+    padding: 0rem 1.5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
 }
 
 .navbar {
@@ -50,7 +58,13 @@
 }
 
 .navlink {
+    color: $main-flat-black;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.navlink:hover {
+    color: $main-flat-pink;
 }
 
 .navlist {
@@ -60,9 +74,4 @@
 .sticky-footer {
     position: absolute;
     bottom: 0;
-}
-
-main {
-    display: flex;
-    flex-direction: row;
 }
