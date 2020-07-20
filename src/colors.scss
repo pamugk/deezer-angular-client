@@ -5,6 +5,8 @@ $main-pink-to-purple: #F06262, #6B42B4;
 $main-purple: #6B42B4, #943AAB;
 
 $main-flat-black: #26303C;
+$main-flat-grey: #72727D;
+$main-flat-light-grey: #EAEAEA;
 $main-flat-orange: #FEAA2D;
 $main-flat-pink: #EF5466;
 $main-flat-purple: #963CAA;
@@ -35,7 +37,7 @@ $multicolor-flat-deep-purple: #6E46B9;
 $multicolor-flat-purple: #963CAA;
 $multicolor-flat-pink: #EF5466;
 
-@mixin background-gradient($direction, $colors) { 
+@mixin gradient($direction, $colors) { 
     background: -webkit-linear-gradient($direction, $colors);
     background: -moz-linear-gradient($direction, $colors);
     background: -o-linear-gradient($direction, $colors);

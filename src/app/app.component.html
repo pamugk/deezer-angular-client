@@ -1,26 +1,52 @@
 <aside class="drawer">
   <a class="deezer-logo-day"></a>
   <ul class="navlist">
-    <li><a class="navlink" href="/"><span class="fas fa-music" active>Музыка</span></a></li>
-    <li><a class="navlink" href="/channels"><span class="fas fa-th-large">Исследуйте</span></a></li>
-    <li>
-      <a class="navlink" href="/profile"><span class="fas fa-heart">Избранное</span></a>
+    <li class="navitem"><a class="navlink-primary" href="/"><span><i class="fas fa-music" ></i>Музыка</span></a></li>
+    <li class="navitem"><a class="navlink-primary" href="/channels"><span><i class="fas fa-th-large"></i>Исследуйте</span></a></li>
+    <li class="navitem">
+      <a class="navlink-primary" href="/profile"><span><i class="fas fa-heart"></i>Избранное</span></a>
       <ul class="navlist">
-        <li><a class="navlink" href="/profile/tracks"><span>Любимые треки</span></a></li>
-        <li><a class="navlink" href="/profile/playlists"><span>Плейлисты</span></a></li>
-        <li><a class="navlink" href="/profile/albums"><span>Альбомы</span></a></li>
-        <li><a class="navlink" href="/profile/artists"><span>Исполнители</span></a></li>
+        <li class="navitem"><a class="navlink-secondary" href="/profile/tracks"><span>Любимые треки</span></a></li>
+        <li class="navitem"><a class="navlink-secondary" href="/profile/playlists"><span>Плейлисты</span></a></li>
+        <li class="navitem"><a class="navlink-secondary" href="/profile/albums"><span>Альбомы</span></a></li>
+        <li class="navitem"><a class="navlink-secondary" href="/profile/artists"><span>Исполнители</span></a></li>
       </ul>
     </li>
   </ul>
 </aside>
 <nav class="navbar">
-  
+  <div class="searchbar">
+    <button class="iconed-button" type="button"><span class="fas fa-search"></span></button>
+    <input class="searchfield" placeholder="Поиск" type="text">
+    <button class="iconed-button" type="button"><span class="fas fa-times-circle"></span></button>
+  </div>
+  <button class="iconed-button" type="button"><span class="fas fa-bell"></span></button>
+  <button class="iconed-button" type="button"><span class="fas fa-user-circle"></span></button>
 </nav>
 <main class="content">
   <router-outlet></router-outlet>
 </main>
 <footer class="footer">
-  <app-player>
-  </app-player>
+  <div class="track-controls">
+    <button class="iconed-button" type="button"><span class="fas fa-step-backward"></span></button>
+    <button class="iconed-button" type="button"><span class="fas fa-play"></span></button>
+    <button class="iconed-button" type="button"><span class="fas fa-step-forward"></span></button>
+  </div>
+  <div class="track-info">
+    <span></span>
+    <span></span>
+    <span></span>
+    <button class="iconed-button" type="button"><span class="fas fa-plus"></span></button>
+    <button class="iconed-button" type="button"><span class="far fa-heart"></span></button>
+    <button class="iconed-button" type="button"><span class="far fa-angry"></span></button>
+    <span class="track-time">00:00</span>
+    <div class="track-slider"></div>
+    <span class="track-time">01:00</span>
+  </div>
+  <div>
+    <button class="iconed-button" type="button"><span class="fas fa-repeat"></span></button>
+    <button class="iconed-button" type="button"><span class="fas fa-random"></span></button>
+    <button class="iconed-button" type="button"><span class="fas fa-volume-up"></span></button>
+    <button class="iconed-button" type="button"><span class="fas fa-sliders-h"></span></button>
+  </div>
 </footer>
