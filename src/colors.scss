@@ -1,0 +1,42 @@
+$main-orange: #DC4C11, #FEAB2E;
+$main-orange-to-pink:#FEAB2E, #D81B60;
+$main-pink: #D81B60, #F06262;
+$main-pink-to-purple: #F06262, #6B42B4;
+$main-purple: #6B42B4, #943AAB;
+
+$main-flat-orange: #FEAA2D;
+$main-flat-pink: #EF5466;
+$main-flat-purple: #963CAA;
+
+$multicolor-red: #B12525, #EF4F4F;
+$multicolor-deep-orange: #D32F2F, #F6693C;
+$multicolor-orange: #DC4C11, #FEAB2E;
+$multicolor-yellow: #FFC92A, #F5E447;
+$multicolor-green: #3CA564, #A6CE50;
+$multicolor-teal: #00796B, #00ACC1;
+$multicolor-blue: #3769C8, #11A8CC;
+$multicolor-indigo: #3A489F, #6E44B7;
+$multicolor-deep-purple: #6B42B4, #943AAB;
+$multicolor-purple: #9136A9, #D84EB6;
+$multicolor-pink: #D81B60, #F06262;
+$multicolor-black: #202122, #26303C;
+
+$multicolor-flat-red: #F04646;
+$multicolor-flat-deep-orange: #F5693C;
+$multicolor-flat-orange: #FEAA2D;
+$multicolor-flat-yellow: #F5E446;
+$multicolor-flat-green: #A5CD50;
+$multicolor-flat-dark-green: #3CA564;
+$multicolor-flat-teal: #009BAA;
+$multicolor-flat-light-blue: #2D96C8;
+$multicolor-flat-blue: #3769C8;
+$multicolor-flat-deep-purple: #6E46B9;
+$multicolor-flat-purple: #963CAA;
+$multicolor-flat-pink: #EF5466;
+
+@mixin background-gradient($direction, $colors) { 
+    background: -webkit-linear-gradient($direction, $colors);
+    background: -moz-linear-gradient($direction, $colors);
+    background: -o-linear-gradient($direction, $colors);
+    background: linear-gradient($direction, $colors);  
+}

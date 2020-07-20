@@ -1,10 +1,12 @@
-a {
-    cursor: pointer;
+.content {
+    grid-row-start: 2;
+    grid-column-start: 2;
 }
 
 .deezer-logo {
     background-size: contain;
     background-repeat: no-repeat;
+    cursor: pointer;
     display: inline-block;
     height: 32px;
     margin: 1rem;
@@ -23,6 +25,42 @@ a {
         @extend .deezer-logo;
         background-image: url(/assets/deezer/logotype/DIGITAL_RGB/SVG/Deezer_Logo_RVB_White.svg);
     }
+}
+
+.drawer {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+}
+
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+}
+
+.navbar {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.navlink {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.navlist {
+    list-style-type: none;
+}
+
+.sticky-footer {
+    position: absolute;
+    bottom: 0;
 }
 
 main {

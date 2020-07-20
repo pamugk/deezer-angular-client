@@ -12,16 +12,17 @@ body {
     color: #333;
     display: flex;
     flex-direction: column;
-    font-family: MabryDeezer, Roboto, NotoSansArabic, NotoSansHebrew;
-    font-size: 14px;
+    font-family: MabryDeezer, NotoSansArabic, NotoSansHebrew;
+    font-size: 12px;
     height: 100%;
+    margin: 0;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
 
 app-root {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     flex-grow: 1;
-    height: auto;
+    grid-template-columns: min-content auto;
+    grid-template-rows: min-content auto min-content;
 }
