@@ -4,15 +4,50 @@
 </div>
 <aside class="drawer">
   <ul class="navlist">
-    <li class="navitem"><a class="navlink-primary" href="/"><span><i class="fas fa-music" ></i>Музыка</span></a></li>
-    <li class="navitem"><a class="navlink-primary" href="/channels"><span><i class="fas fa-th-large"></i>Исследуйте</span></a></li>
     <li class="navitem">
-      <a class="navlink-primary" href="/profile"><span><i class="fas fa-heart"></i>Избранное</span></a>
+      <a 
+        class="navlink-primary" 
+        routerLink="/"
+        routerLinkActive="navlink-active"
+        [routerLinkActiveOptions]="{exact:true}"
+      >
+        <span><i class="fas fa-music" ></i>Музыка</span>
+      </a>
+    </li>
+    <li class="navitem">
+      <a class="navlink-primary" routerLink="/channels" routerLinkActive="navlink-active">
+        <span><i class="fas fa-th-large"></i>Исследуйте</span>
+      </a>
+    </li>
+    <li class="navitem" *ngIf="service.isLoggedIn()">
+      <a 
+        class="navlink-primary"
+        routerLink="/profile" 
+        routerLinkActive="navlink-active"
+        [routerLinkActiveOptions]="{exact:true}">
+        <span><i class="fas fa-heart"></i>Избранное</span>
+      </a>
       <ul class="navlist">
-        <li class="navitem"><a class="navlink-secondary" href="/profile/tracks"><span>Любимые треки</span></a></li>
-        <li class="navitem"><a class="navlink-secondary" href="/profile/playlists"><span>Плейлисты</span></a></li>
-        <li class="navitem"><a class="navlink-secondary" href="/profile/albums"><span>Альбомы</span></a></li>
-        <li class="navitem"><a class="navlink-secondary" href="/profile/artists"><span>Исполнители</span></a></li>
+        <li class="navitem">
+          <a class="navlink-secondary" routerLink="/profile/tracks" routerLinkActive="navlink-active">
+            <span>Любимые треки</span>
+          </a>
+        </li>
+        <li class="navitem">
+          <a class="navlink-secondary" routerLink="/profile/playlists" routerLinkActive="navlink-active">
+            <span>Плейлисты</span>
+          </a>
+        </li>
+        <li class="navitem">
+          <a class="navlink-secondary" routerLink="/profile/albums" routerLinkActive="navlink-active">
+            <span>Альбомы</span>
+          </a>
+        </li>
+        <li class="navitem">
+          <a class="navlink-secondary" routerLink="/profile/artists" routerLinkActive="navlink-active">
+            <span>Исполнители</span>
+          </a>
+        </li>
       </ul>
     </li>
   </ul>

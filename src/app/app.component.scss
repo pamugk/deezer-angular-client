@@ -104,19 +104,27 @@ main {
 
 .navlink {
     cursor: pointer;
+    padding: 0.25rem 1.5rem;
     text-decoration: none;
 
     &-primary {
         @extend .navlink;
         color: $main-flat-black;
         font-size: large;
+        font-weight: bold;
     }
 
     &-secondary {
         @extend .navlink;
         color: $main-flat-grey;
         font-size: larger;
+        padding-left: 3.5rem;
     }
+}
+
+.navlink-active {
+    border-left: thick solid $main-flat-pink;
+    color: $main-flat-pink;
 }
 
 .navlink:hover {
@@ -125,7 +133,7 @@ main {
 
 .navlist {
     list-style-type: none;
-    padding: 0 1.5rem;
+    padding: 0
 }
 
 .navitem {

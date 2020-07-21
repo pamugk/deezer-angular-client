@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PagesModule } from './pages/pages.module';
+
 import { HomeComponent } from './pages/home/home.component';
 import { AccountComponent } from './pages/account/account.component';
 import { ChannelsComponent } from './pages/channels/channels.component';
@@ -19,8 +19,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
-    PagesModule
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })
