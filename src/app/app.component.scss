@@ -1,8 +1,19 @@
 @import '../colors.scss';
 
+.branding {
+    align-items: center;
+    border-right: thin solid $main-flat-light-grey;
+    display: flex;
+}
+
 .content {
-    grid-row-start: 2;
-    grid-column-start: 2;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    grid-row: 2;
+    grid-column: 2;
+    justify-content: center;
+    justify-items: center;
 }
 
 .deezer-logo {
@@ -11,7 +22,7 @@
     cursor: pointer;
     display: inline-block;
     height: 32px;
-    margin: 1rem;
+    margin-left: 1.5rem;
     transition-duration: 0s;
     transition-property: background-image;
     transition-timing-function: linear;
@@ -31,14 +42,8 @@
 
 .drawer {
     border-right: thin solid $main-flat-light-grey;
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-.fixed-navbar {
-    position: fixed;
-    top: 0;
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .footer {
@@ -47,8 +52,14 @@
     font-size: larger;
     grid-column-start: 1;
     grid-column-end: 3;
-    grid-row-start: 3;
+    grid-row: 3;
     padding: 1rem 1.5rem;
+
+    &-sticky {
+        @extend .footer;
+        position: sticky;
+        bottom: 0;
+    }
 }
 
 .iconed-button {
@@ -56,14 +67,17 @@
     border: none;
     border-radius: 50%;
     color: inherit;
-    cursor: pointer;
     font-size: inherit;
     font-weight: inherit;
     margin-right: 1rem;
     padding: 0.5rem;
 }
 
-.iconed-button:hover {
+.iconed-button:enabled {
+    cursor: pointer;
+}
+
+.iconed-button:enabled:hover {
     background-color: $main-flat-light-grey;
 }
 
@@ -76,10 +90,16 @@ main {
     border-bottom: thin solid $main-flat-light-grey;
     display: flex;
     font-size: large;
-    grid-column-start: 2;
-    grid-row-start: 1;
+    grid-column: 2;
+    grid-row: 1;
     height: max-content;
     padding: 0.5rem 1rem;
+
+    &-sticky {
+        @extend .navbar;
+        position: sticky;
+        top: 0;
+    }
 }
 
 .navlink {
@@ -131,11 +151,6 @@ main {
 
 span i {
     padding-right: 1rem;
-}
-
-.sticky-footer {
-    position: absolute;
-    bottom: 0;
 }
 
 .track-time {

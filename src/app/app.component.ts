@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DeezerService } from './deezer.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'deezer-angular-client';
+  search: string = "";
+
+  constructor (public readonly service: DeezerService) { }
+
+  clearSearch() {
+    this.search = "";
+  }
+
+  startSearch() {
+    if (this.search) {
+      console.log(`Searching for ${this.search}`);
+      this.search = "";
+    }
+  }
 }

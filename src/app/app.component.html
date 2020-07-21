@@ -1,5 +1,8 @@
-<aside class="drawer">
+<script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
+<div class="branding">
   <a class="deezer-logo-day"></a>
+</div>
+<aside class="drawer">
   <ul class="navlist">
     <li class="navitem"><a class="navlink-primary" href="/"><span><i class="fas fa-music" ></i>Музыка</span></a></li>
     <li class="navitem"><a class="navlink-primary" href="/channels"><span><i class="fas fa-th-large"></i>Исследуйте</span></a></li>
@@ -14,19 +17,24 @@
     </li>
   </ul>
 </aside>
-<nav class="navbar">
+<nav class="navbar-sticky">
   <div class="searchbar">
-    <button class="iconed-button" type="button"><span class="fas fa-search"></span></button>
-    <input class="searchfield" placeholder="Поиск" type="text">
-    <button class="iconed-button" type="button"><span class="fas fa-times-circle"></span></button>
+    <button class="iconed-button" (click)="startSearch()" [disabled]="!search" type="button"><span class="fas fa-search"></span></button>
+    <input class="searchfield" (keyup.enter)="startSearch()" placeholder="Поиск" type="text" [(ngModel)]="search">
+    <button class="iconed-button" (click)="clearSearch()" *ngIf="search" type="button"><span class="fas fa-times-circle"></span></button>
   </div>
-  <button class="iconed-button" type="button"><span class="fas fa-bell"></span></button>
-  <button class="iconed-button" type="button"><span class="fas fa-sign-in-alt"></span></button>
+  <div *ngIf="service.isLoggedIn(); else unknown">
+    <button class="iconed-button" type="button"><span class="fas fa-bell"></span></button>
+    <button class="iconed-button" type="button"><span class="fas fa-user"></span></button>
+  </div>
+  <ng-template #unknown>
+    <button class="iconed-button" type="button"><span class="fas fa-sign-in-alt"></span></button>
+  </ng-template>
 </nav>
 <main class="content">
   <router-outlet></router-outlet>
 </main>
-<footer class="footer">
+<footer *ngIf="service.isLoggedIn()" class="footer-sticky">
   <div class="track-controls">
     <button class="iconed-button" type="button"><span class="fas fa-step-backward"></span></button>
     <button class="iconed-button" type="button"><span class="fas fa-play"></span></button>
@@ -49,4 +57,4 @@
     <button class="iconed-button" type="button"><span class="fas fa-volume-up"></span></button>
     <button class="iconed-button" type="button"><span class="fas fa-sliders-h"></span></button>
   </div>
-</footer>
+</footer> 
