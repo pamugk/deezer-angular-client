@@ -1,3 +1,6 @@
+import { Gender } from "./gender.enum";
+import { ExplicitContentLevel } from "./explicit-content-level.enum";
+
 export class User {
     id: number; //The user's Deezer ID
     name: string; //The user's Deezer nickname
@@ -7,7 +10,7 @@ export class User {
     status: number; //The user's status
     birthday: Date; //The user's birthday
     inscription_date: Date; //The user's inscription date
-    gender: string; //The user's gender : F or M
+    gender: Gender; //The user's gender
     link: URL; //The url of the profil for the user on Deezer
     picture: URL; //The url of the user's profil picture
     picture_small: URL; //The url of the user's profil picture in size small
@@ -17,7 +20,7 @@ export class User {
     country: string; //The user's country
     lang: string; //The user's language
     is_kid: boolean; //If the user is a kid or not
-    explicit_content_level: string; //The user's explicit content level according to his country
-    explicit_content_levels_available: Array<String>; //The user's available explicit content levels according to his country. Possible values are: explicit_display, explicit_no_recommendation and explicit_hide
+    explicit_content_level: ExplicitContentLevel; //The user's explicit content level according to his country
+    explicit_content_levels_available: Array<ExplicitContentLevel>; //The user's available explicit content levels according to his country. Possible values are: explicit_display, explicit_no_recommendation and explicit_hide
     tracklist: URL; //API Link to the flow of this user
 }

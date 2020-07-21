@@ -1,10 +1,10 @@
 export enum Explicity {
-    NotExplicit,
-    Explicit,
-    Unknown,
-    Edited,
-    PartiallyExplicit,
-    PartiallyUnknown,
-    NoAdviceAvailable,
-    PartiallyNoAdviceAvailable
+    NOT_EXPLICIT = 0,
+    EXPLICIT,
+    UNKNOWN,
+    EDITED,
+    PARTIALLY_EXPLICIT,
+    PARTIALLY_UNKNOWN,
+    NO_ADVICE_AVAILABLE,
+    PARTIALLY_NO_ADVICE_AVAILABLE
 }
