@@ -3,27 +3,37 @@ import { CommonModule } from '@angular/common';
 
 import { Album } from './album';
 import { Artist } from './artist';
-import { Channel } from './channel';
-import { Mix } from './mix';
+import { Chart } from './chart';
+import { Comment } from './comment';
+import { Editorial } from './editorial';
+import { Genre } from './genre';
+import { Infos } from './infos';
+import { Options } from './options';
 import { Playlist } from './playlist';
+import { Radio } from './radio';
+import { Search } from './search';
 import { Track } from './track';
 import { User } from './user';
 
 @NgModule({
   declarations: [
-    Album, Artist, 
-    Channel, Mix, 
-    Playlist, Track, 
-    User
+    Album, Artist,
+    Chart, Comment,
+    Editorial, Genre,
+    Infos, Options, 
+    Playlist, Radio, 
+    Search, Track, User
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    Album, Artist, 
-    Channel, Mix, 
-    Playlist, Track, 
-    User
+    Album, Artist,
+    Chart, Comment,
+    Editorial, Genre,
+    Infos, Options, 
+    Playlist, Radio, 
+    Search, Track, User
   ],
 })
 export class DataModule { }
