@@ -6,4 +6,19 @@ import { Injectable } from '@angular/core';
 export class DeezerService {
 
   constructor() { }
+
+  getLoginStatus() {
+  }
+
+  isLoggedIn() {
+    
+  }
+
+  login() {
+
+  }
+
+  logout() {
+
+  }
 }

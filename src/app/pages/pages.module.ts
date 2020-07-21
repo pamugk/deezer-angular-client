@@ -9,14 +9,15 @@ import { AlbumComponent } from './album/album.component';
 import { ArtistComponent } from './artist/artist.component';
 import { ChannelComponent } from './channel/channel.component';
 import { ChannelsComponent } from './channels/channels.component';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 @NgModule({
   declarations: [
     AccountComponent, AlbumComponent,
     ArtistComponent, ChannelComponent,
     ChannelsComponent, HomeComponent, 
-    NotFoundComponent, ProfileComponent,
-    SearchComponent
+    NotFoundComponent, PlaylistComponent, 
+    ProfileComponent, SearchComponent
   ],
   imports: [
     CommonModule
