@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DeezerService } from './deezer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +10,17 @@ import { DeezerService } from './deezer.service';
 export class AppComponent {
   search: string = "";
 
-  constructor (public readonly service: DeezerService) { }
+  constructor (
+    private router: Router,
+    public readonly service: DeezerService
+  ) { }
 
   clearSearch() {
     this.search = "";
   }
 
   startSearch() {
-    if (this.search) {
-      console.log(`Searching for ${this.search}`);
-      this.search = "";
-    }
+    if (this.search)
+      this.router.navigate(["/search", this.search]);
   }
 }

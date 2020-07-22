@@ -6,17 +6,22 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataModule } from './data/data.module';
+import { ProfileModule } from './pages/profile/profile.module';
+import { SearchModule } from './pages/search/search.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+
+    AppRoutingModule,
     DataModule,
-    FormsModule
+    ProfileModule,
+    SearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

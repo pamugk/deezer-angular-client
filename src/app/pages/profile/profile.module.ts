@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
 import { OverviewComponent } from './overview/overview.component';
 import { TracksComponent } from './tracks/tracks.component';
@@ -20,7 +20,7 @@ import { PlaylistsComponent } from './playlists/playlists.component';
   ],
   imports: [
     CommonModule,
-    ProfileRoutingModule
+    RouterModule
   ],
   exports: [
     ProfileComponent
