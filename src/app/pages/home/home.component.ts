@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DeezerService } from 'src/app/deezer.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public readonly deezer: DeezerService) { }
 
   ngOnInit(): void {
   }

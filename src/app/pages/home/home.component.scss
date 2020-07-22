@@ -1,0 +1,8 @@
+@import '../../../colors.scss';
+
+.danger-message {
+    @include gradient(to bottom right, $multicolor-red);
+    color: $main-flat-light-grey;
+    font-size: xx-large;
+    padding: 3rem;
+}

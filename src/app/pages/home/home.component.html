@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div *ngIf="deezer.isLoggedIn(); else unknown">home works!</div>
+<ng-template #unknown>
+    <div class="danger-message">
+        <span>
+            Вы не осуществили вход, поэтому доступа к рекомендациям у вас нет :(
+        </span>
+    </div>
+</ng-template>

@@ -19,7 +19,7 @@
         <span><i class="fas fa-th-large"></i>Исследуйте</span>
       </a>
     </li>
-    <li class="navitem" *ngIf="service.isLoggedIn()">
+    <li class="navitem" *ngIf="deezer.isLoggedIn()">
       <a 
         class="navlink-primary"
         routerLink="/profile" 
@@ -58,7 +58,7 @@
     <input class="searchfield" (keyup.enter)="startSearch()" placeholder="Поиск" type="text" [(ngModel)]="search">
     <button class="iconed-button" (click)="clearSearch()" *ngIf="search" type="button"><span class="fas fa-times-circle"></span></button>
   </div>
-  <div *ngIf="service.isLoggedIn(); else unknown">
+  <div *ngIf="deezer.isLoggedIn(); else unknown">
     <button class="iconed-button" type="button"><span class="fas fa-bell"></span></button>
     <button class="iconed-button" type="button"><span class="fas fa-user"></span></button>
   </div>
@@ -69,7 +69,7 @@
 <main class="content">
   <router-outlet></router-outlet>
 </main>
-<footer *ngIf="service.isLoggedIn()" class="footer-sticky">
+<footer *ngIf="deezer.isLoggedIn()" class="footer-sticky">
   <div class="track-controls">
     <button class="iconed-button" type="button"><span class="fas fa-step-backward"></span></button>
     <button class="iconed-button" type="button"><span class="fas fa-play"></span></button>

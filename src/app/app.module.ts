@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { DataModule } from './data/data.module';
 import { ProfileModule } from './pages/profile/profile.module';
 import { SearchModule } from './pages/search/search.module';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@ export class AppComponent {
 
   constructor (
     private router: Router,
-    public readonly service: DeezerService
+    public readonly deezer: DeezerService
   ) { }
 
   clearSearch() {
