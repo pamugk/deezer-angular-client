@@ -1,22 +1,32 @@
 @import '../../../colors.scss';
 
+:host {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    font-size: inherit;
+}
+
 .tab-panel {
     border-bottom: thin solid $main-flat-light-grey;
     display: flex;
-    flex: auto;
     font-size: inherit;
-    padding-top: 3rem;
+    padding-top: 1.5rem;
 }
 
 .tabs {
+    display: inline-flex;
     font-size: inherit;
     list-style: none;
     margin: auto;
+    margin-bottom: 1rem;
+    padding-left: 0;
 }
 
 .tab {
     color: $main-flat-grey;
-    font-size: larger;
+    font-size: medium;
+    padding-bottom: 1rem;
     text-decoration: none;
 }
 
@@ -27,4 +37,12 @@
 .tab-active {
     color: $main-flat-black;
     border-bottom: medium solid $main-flat-pink;
+}
+
+.tab-container {
+    font-size: inherit;
+}
+
+.tab-container + .tab-container {
+    margin-left: 2.75rem;
 }

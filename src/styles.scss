@@ -19,10 +19,3 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
-
-app-root {
-    display: grid;
-    flex: auto;
-    grid-template-columns: max-content auto;
-    grid-template-rows: min-content auto min-content;
-}

@@ -1,21 +1,35 @@
 <nav class="tab-panel">
     <ul class="tabs">
-        <li>
+        <li class="tab-container">
             <a
-                class="tabs"
+                class="tab"
                 [routerLink]="['/search', query]"
                 routerLinkActive="tab-active"
                 [routerLinkActiveOptions]="{exact:true}"
             >
                 Всё
             </a>
-            <a class="tabs" routerLink="/search/{{query}}/tracks" routerLinkActive="tab-active">Треки</a>
-            <a class="tabs" routerLink="/search/{{query}}/albums" routerLinkActive="tab-active">Альбомы</a>
-            <a class="tabs" routerLink="/search/{{query}}/playlists" routerLinkActive="tab-active">Плейлисты</a>
-            <a class="tabs" routerLink="/search/{{query}}/radios" routerLinkActive="tab-active">Миксы</a>
-            <a class="tabs" routerLink="/search/{{query}}/channels" routerLinkActive="tab-active">Каналы</a>
-            <a class="tabs" routerLink="/search/{{query}}/artists" routerLinkActive="tab-active">Исполнители</a>
-            <a class="tabs" routerLink="/search/{{query}}/users" routerLinkActive="tab-active">Профили</a>
+        </li>
+        <li class="tab-container">
+            <a class="tab" routerLink="/search/{{query}}/tracks" routerLinkActive="tab-active">Треки</a>
+        </li>
+        <li class="tab-container">
+            <a class="tab" routerLink="/search/{{query}}/albums" routerLinkActive="tab-active">Альбомы</a>
+        </li>
+        <li class="tab-container">
+            <a class="tab" routerLink="/search/{{query}}/playlists" routerLinkActive="tab-active">Плейлисты</a>
+        </li>
+        <li class="tab-container">
+            <a class="tab" routerLink="/search/{{query}}/radios" routerLinkActive="tab-active">Миксы</a>
+        </li>
+        <li class="tab-container">
+            <a class="tab" routerLink="/search/{{query}}/channels" routerLinkActive="tab-active">Каналы</a>
+        </li>
+        <li class="tab-container">
+            <a class="tab" routerLink="/search/{{query}}/artists" routerLinkActive="tab-active">Исполнители</a>
+        </li>
+        <li class="tab-container">
+            <a class="tab" routerLink="/search/{{query}}/users" routerLinkActive="tab-active">Профили</a>
         </li>
     </ul>
 </nav>

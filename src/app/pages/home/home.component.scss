@@ -4,5 +4,11 @@
     @include gradient(to bottom right, $multicolor-red);
     color: $main-flat-light-grey;
     font-size: xx-large;
+    margin: auto;
     padding: 3rem;
+}
+
+:host {
+    display: flex;
+    flex: auto;
 }
