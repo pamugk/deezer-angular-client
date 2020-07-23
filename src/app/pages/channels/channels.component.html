@@ -1,10 +1,16 @@
-<h1>Все каналы</h1>
-<section>
-    <h2>Рекомендуемые</h2>
-</section>
-<section>
-    <h2>Музыка</h2>
-</section>
-<section>
-    <h2>Настроение</h2>
-</section>
+<div *ngIf="channels; then content; else loading"></div>
+<ng-template #content>
+    <h1>Все каналы</h1>
+    <section>
+        <h2>Рекомендуемые</h2>
+    </section>
+    <section>
+        <h2>Музыка</h2>
+    </section>
+    <section>
+        <h2>Настроение</h2>
+    </section>
+</ng-template>
+<ng-template #loading>
+    <div class="spinner"></div>
+</ng-template>
