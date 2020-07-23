@@ -6,8 +6,8 @@ import { AlbumsComponent } from './albums/albums.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { ChannelsComponent } from './channels/channels.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
-import { ProfilesComponent } from './profiles/profiles.component';
 import { RadiosComponent } from './radios/radios.component';
+import { UsersComponent } from './users/users.component';
 
 export const searchRoutes:Routes = [
   { path: '', component: OverviewComponent },
@@ -15,7 +15,7 @@ export const searchRoutes:Routes = [
   { path: 'artists', component: ArtistsComponent },
   { path: 'channels', component: ChannelsComponent },
   { path: 'playlists', component: PlaylistsComponent },
-  { path: 'profiles', component: ProfilesComponent },
   { path: 'radios', component: RadiosComponent },
   { path: 'tracks', component: TracksComponent },
+  { path: 'users', component: UsersComponent }
 ];

@@ -2,18 +2,14 @@
 
 .branding {
     align-items: center;
-    border-right: thin solid $main-flat-light-grey;
+    border-right: thin solid $main-flat-grey;
     display: flex;
 }
 
 .content {
-    align-content: center;
-    align-items: center;
     display: flex;
     grid-row: 2;
     grid-column: 2;
-    justify-content: center;
-    justify-items: center;
 }
 
 .deezer-logo {
@@ -41,13 +37,13 @@
 }
 
 .drawer {
-    border-right: thin solid $main-flat-light-grey;
+    border-right: thin solid $main-flat-grey;
     grid-column: 1;
     grid-row: 2;
 }
 
 .footer {
-    border-top: thin solid $main-flat-light-grey;
+    border-top: thin solid $main-flat-grey;
     display: flex;
     font-size: larger;
     grid-column-start: 1;
@@ -81,13 +77,9 @@
     background-color: $main-flat-light-grey;
 }
 
-main {
-    display: flex;
-}
-
 .navbar {
     align-items: center;
-    border-bottom: thin solid $main-flat-light-grey;
+    border-bottom: thin solid $main-flat-grey;
     display: flex;
     font-size: large;
     grid-column: 2;

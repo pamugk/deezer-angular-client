@@ -1,0 +1,30 @@
+@import '../../../colors.scss';
+
+.tab-panel {
+    border-bottom: thin solid $main-flat-light-grey;
+    display: flex;
+    flex: auto;
+    font-size: inherit;
+    padding-top: 3rem;
+}
+
+.tabs {
+    font-size: inherit;
+    list-style: none;
+    margin: auto;
+}
+
+.tab {
+    color: $main-flat-grey;
+    font-size: larger;
+    text-decoration: none;
+}
+
+.tab:hover {
+    color: $main-flat-black;
+}
+
+.tab-active {
+    color: $main-flat-black;
+    border-bottom: medium solid $main-flat-pink;
+}
