@@ -6,8 +6,8 @@
 
 //Bootstrap-style spinner
 @keyframes spinner {
-    to { transform: rotate(360deg); }
-  }
+    to { transform: rotate(359deg); }
+}
   
 .spinner {
     display: inline-block;
@@ -17,5 +17,5 @@
     border: .25em solid $main-flat-pink;
     border-right-color: transparent;
     border-radius: 50%;
-    animation: spinner-border .75s linear infinite;
+    animation: spinner .75s linear infinite;
   }

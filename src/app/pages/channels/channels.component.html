@@ -1,4 +1,4 @@
-<div *ngIf="channels; then content; else loading"></div>
+<div class="spinner" *ngIf="!channels; else content"></div>
 <ng-template #content>
     <h1>Все каналы</h1>
     <section>
@@ -10,7 +10,4 @@
     <section>
         <h2>Настроение</h2>
     </section>
-</ng-template>
-<ng-template #loading>
-    <div class="spinner"></div>
 </ng-template>

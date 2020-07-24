@@ -12,11 +12,16 @@ import { SearchResult } from 'src/app/data/search-result';
 })
 export class ChannelsComponent implements OnInit {
   channels: SearchResult<Editorial>;
+  defined: boolean = true;
 
   constructor(private deezer: DeezerService) { }
 
   ngOnInit(): void {
     this.deezer.getChannels(this.handleChannels);
+  }
+
+  loaded() : boolean {
+    return true;
   }
 
   private handleChannels(channels: SearchResult<Editorial>) {
