@@ -3,11 +3,13 @@
     <h1>Все каналы</h1>
     <section>
         <h2>Рекомендуемые</h2>
-    </section>
-    <section>
-        <h2>Музыка</h2>
-    </section>
-    <section>
-        <h2>Настроение</h2>
+        <ul *ngIf="channels.total > 0; else nothing">
+            <li *ngFor="let channel of channels.data">
+                {{channel.name}}
+            </li>
+        </ul>
+        <ng-template #nothing>
+            <span>Ничегошеньки не найдено :(</span>
+        </ng-template>
     </section>
 </ng-template>
