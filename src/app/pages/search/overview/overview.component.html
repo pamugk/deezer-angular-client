@@ -1,1 +1,79 @@
-<p>overview works!</p>
+<div class="warning-message" *ngIf="overview.nothingFound(); else results">
+    <span>Совсем ничего не найдено :(</span>
+</div>
+<ng-template #results>
+    <section *ngIf="overview.hasTracks()">
+        <h1>
+            <a class="section-header" routerLink="/search/{{overview.query}}/tracks">
+                <span>Треки</span><span class="fas fa-angle-right"></span>
+            </a>
+        </h1>
+        <ul>
+            <li *ngFor="let track of overview.tracks.data">
+                {{track.title}}
+            </li>
+        </ul>
+    </section>
+    <section *ngIf="overview.hasAlbums()">
+        <h1>
+            <a class="section-header" routerLink="/search/{{overview.query}}/albums">
+                <span>Альбомы</span><span class="fas fa-angle-right"></span>
+            </a>
+        </h1>
+        <ul class="card-list">
+            <li class="card" *ngFor="let album of overview.albums.data">
+                <a routerLink="/album/{{album.id}}"><img src="{{album.cover_medium}}"></a>
+                <h2>{{album.title}}</h2>
+                <span>от <a routerLink="/album/{{album.artist.id}}">{{album.artist.name}}</a></span>
+            </li>
+        </ul>
+    </section>
+    <section *ngIf="overview.hasPlaylists()">
+        <h1>
+            <a class="section-header" routerLink="/search/{{overview.query}}/playlists">
+                <span>Плейлисты</span><span class="fas fa-angle-right"></span>
+            </a>
+        </h1>
+        <ul class="card-list">
+            <li class="card" *ngFor="let playlist of overview.playlists.data">
+                <a routerLink="/playlist/{{playlist.id}}"><img src="{{playlist.picture_medium}}"></a>
+                <h2>{{playlist.title}}</h2>
+                <span>Треков: {{playlist.nb_tracks}}</span>
+            </li>
+        </ul>
+    </section>
+    <section *ngIf="overview.hasRadios()">
+        <h1>
+            <a class="section-header" routerLink="/search/{{overview.query}}/radios">
+                <span>Миксы</span><span class="fas fa-angle-right"></span>
+            </a>
+        </h1>
+        <ul class="card-list">
+            <li *ngFor="let radio of overview.radios.data">{{radios.title}}</li>
+        </ul>
+    </section>
+    <section *ngIf="overview.hasArtists()">
+        <h1>
+            <a class="section-header" routerLink="/search/{{overview.query}}/artists">
+                <span>Исполнители</span><span class="fas fa-angle-right"></span>
+            </a>
+        </h1>
+        <ul class="card-list">
+            <li class="card-centered" *ngFor="let artist of overview.artists.data">
+                <a routerLink="/artist/{{artist.id}}"><img src="{{artist.picture_medium}}"></a>
+                <h2>{{artist.name}}</h2>
+                <span>Поклонников: {{artist.nb_fan}}</span>
+            </li>
+        </ul>
+    </section>
+    <section *ngIf="overview.hasUsers()">
+        <h1>
+            <a class="section-header" routerLink="/search/{{overview.query}}/users">
+                <span>Пользователи</span><span class="fas fa-angle-right"></span>
+            </a>
+        </h1>
+        <ul class="card-list">
+            <li *ngFor="let user of overview.users.data">{{user.name}}</li>
+        </ul>
+    </section>
+</ng-template>

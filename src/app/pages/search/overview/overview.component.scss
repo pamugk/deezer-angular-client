@@ -1,0 +1,48 @@
+@import '../../../../colors.scss';
+
+:host {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    font-size: inherit;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: min-content;
+
+    &-centered {
+        @extend .card;
+        align-items: center;
+    }
+}
+
+.card-list {
+    display: flex;
+    list-style: none;
+}
+
+.rounded-image {
+    border-radius: 50%;
+}
+
+.section-header {
+    color: $main-flat-black;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.section-header:hover {
+    color: $main-flat-pink;
+}
+
+.warning-message {
+    @include gradient(to bottom right, $multicolor-yellow);
+    color: $main-flat-grey;
+    font-size: xx-large;
+    margin: auto;
+    padding: 3rem;
+}

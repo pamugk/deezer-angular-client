@@ -11,6 +11,7 @@ import { TracksComponent } from './tracks/tracks.component';
 import { RadiosComponent } from './radios/radios.component';
 import { ChannelsComponent } from './channels/channels.component';
 import { UsersComponent } from './users/users.component';
+import { SearchService } from './search.service';
 
 
 @NgModule({
@@ -18,7 +19,6 @@ import { UsersComponent } from './users/users.component';
     SearchComponent,
 
     OverviewComponent,
-    
     AlbumsComponent,
     ChannelsComponent,
     ArtistsComponent,
@@ -33,6 +33,9 @@ import { UsersComponent } from './users/users.component';
   ],
   exports: [
     SearchComponent
+  ],
+  providers:[
+    SearchService
   ]
 })
 export class SearchModule { }

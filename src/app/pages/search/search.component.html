@@ -1,36 +1,39 @@
-<nav class="tab-panel">
-    <ul class="tabs">
-        <li class="tab-container">
-            <a
-                class="tab"
-                [routerLink]="['/search', query]"
-                routerLinkActive="tab-active"
-                [routerLinkActiveOptions]="{exact:true}"
-            >
-                Всё
-            </a>
-        </li>
-        <li class="tab-container">
-            <a class="tab" routerLink="/search/{{query}}/tracks" routerLinkActive="tab-active">Треки</a>
-        </li>
-        <li class="tab-container">
-            <a class="tab" routerLink="/search/{{query}}/albums" routerLinkActive="tab-active">Альбомы</a>
-        </li>
-        <li class="tab-container">
-            <a class="tab" routerLink="/search/{{query}}/playlists" routerLinkActive="tab-active">Плейлисты</a>
-        </li>
-        <li class="tab-container">
-            <a class="tab" routerLink="/search/{{query}}/radios" routerLinkActive="tab-active">Миксы</a>
-        </li>
-        <li class="tab-container">
-            <a class="tab" routerLink="/search/{{query}}/channels" routerLinkActive="tab-active">Каналы</a>
-        </li>
-        <li class="tab-container">
-            <a class="tab" routerLink="/search/{{query}}/artists" routerLinkActive="tab-active">Исполнители</a>
-        </li>
-        <li class="tab-container">
-            <a class="tab" routerLink="/search/{{query}}/users" routerLinkActive="tab-active">Профили</a>
-        </li>
-    </ul>
-</nav>
-<router-outlet></router-outlet>
+<div class="spinner" *ngIf="overview.loading(); else results"></div>
+<ng-template #results>
+    <nav class="tab-panel">
+        <ul class="tabs">
+            <li class="tab-container">
+                <a
+                    class="tab"
+                    [routerLink]="['/search', overview.query]"
+                    routerLinkActive="tab-active"
+                    [routerLinkActiveOptions]="{exact:true}"
+                >
+                    Всё
+                </a>
+            </li>
+            <li class="tab-container" *ngIf="overview.hasTracks()">
+                <a class="tab" routerLink="/search/{{overview.query}}/tracks" routerLinkActive="tab-active">Треки</a>
+            </li>
+            <li class="tab-container" *ngIf="overview.hasAlbums()">
+                <a class="tab" routerLink="/search/{{overview.query}}/albums" routerLinkActive="tab-active">Альбомы</a>
+            </li>
+            <li class="tab-container" *ngIf="overview.hasPlaylists()">
+                <a class="tab" routerLink="/search/{{overview.query}}/playlists" routerLinkActive="tab-active">Плейлисты</a>
+            </li>
+            <li class="tab-container" *ngIf="overview.hasRadios()">
+                <a class="tab" routerLink="/search/{{overview.query}}/radios" routerLinkActive="tab-active">Миксы</a>
+            </li>
+            <!--<li class="tab-container">
+                <a class="tab" routerLink="/search/{{overview.query}}/channels" routerLinkActive="tab-active">Каналы</a>
+            </li>-->
+            <li class="tab-container" *ngIf="overview.hasArtists()">
+                <a class="tab" routerLink="/search/{{overview.query}}/artists" routerLinkActive="tab-active">Исполнители</a>
+            </li>
+            <li class="tab-container" *ngIf="overview.hasUsers()">
+                <a class="tab" routerLink="/search/{{overview.query}}/users" routerLinkActive="tab-active">Профили</a>
+            </li>
+        </ul>
+    </nav>
+    <router-outlet></router-outlet>
+</ng-template>

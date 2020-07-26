@@ -46,3 +46,19 @@
 .tab-container + .tab-container {
     margin-left: 2.75rem;
 }
+
+//Bootstrap-style spinner
+@keyframes spinner {
+    to { transform: rotate(359deg); }
+  }
+    
+  .spinner {
+    animation: spinner .75s linear infinite;
+    border: .25em solid $main-flat-pink;
+    border-right-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    height: 2rem;
+    margin: auto;
+    width: 2rem;
+  }
