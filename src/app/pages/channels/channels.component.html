@@ -1,11 +1,16 @@
 <div class="spinner" *ngIf="!channels; else content"></div>
 <ng-template #content>
-    <h1>Все каналы</h1>
-    <section>
-        <h2>Рекомендуемые</h2>
-        <ul *ngIf="channels.total > 0; else nothing">
-            <li *ngFor="let channel of channels.data">
-                {{channel.name}}
+    <h1 class="main-title">Все каналы</h1>
+    <section class="channels-section">
+        <h2 class="channels-title">Рекомендуемые</h2>
+        <ul class="channels" *ngIf="channels.total > 0; else nothing">
+            <li class="channel" *ngFor="let channel of channels.data">
+                <a class="channel-link" href="/channel/{{channel.id}}">
+                    <figure class="channel-figure">
+                        <img src="{{channel.picture_medium}}" alt="{{channel.name}}" width="264" height="134">
+                        <figcaption class="channel-caption">{{channel.name}}</figcaption>
+                    </figure>
+                </a>
             </li>
         </ul>
         <ng-template #nothing>

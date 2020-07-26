@@ -1,7 +1,5 @@
-<div class="branding">
-  <a class="deezer-logo-day"></a>
-</div>
 <aside class="drawer">
+  <a class="deezer-logo-day"></a>
   <ul class="navlist">
     <li class="navitem">
       <a 
@@ -51,7 +49,7 @@
     </li>
   </ul>
 </aside>
-<nav class="navbar-sticky">
+<nav class="navbar">
   <div class="searchbar">
     <button class="iconed-button" (click)="startSearch()" [disabled]="!search" type="button"><span class="fas fa-search"></span></button>
     <input class="searchfield" (keyup.enter)="startSearch()" placeholder="Поиск" type="text" [(ngModel)]="search">
@@ -68,7 +66,7 @@
 <main class="content">
   <router-outlet></router-outlet>
 </main>
-<footer *ngIf="deezer.isLoggedIn()" class="footer-sticky">
+<footer *ngIf="deezer.isLoggedIn()" class="footer">
   <div class="track-controls">
     <button class="iconed-button" type="button"><span class="fas fa-step-backward"></span></button>
     <button class="iconed-button" type="button"><span class="fas fa-play"></span></button>

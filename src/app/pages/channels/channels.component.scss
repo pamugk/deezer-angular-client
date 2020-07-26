@@ -3,6 +3,65 @@
 :host {
   display: flex;
   flex: auto;
+  flex-direction: column;
+}
+
+.channels {
+  display: flex;
+  font-size: inherit;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+.channels-section {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 1504px;
+}
+
+.channels-title{
+  margin-left: 2.125rem;
+  margin-bottom: 1rem;
+}
+
+.channel {
+  font-size: large;
+  margin-left: 2.125rem;
+  margin-top: 0.5rem;
+  margin-bottom: calc(1rem + 77px);
+
+  &-caption {
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -77px;
+  }
+
+  &-figure {
+    display: flex;
+    flex-direction: column;
+    font-size: inherit;
+    margin: 0;
+  }
+
+  &-link {
+    cursor: pointer;
+    font-size: inherit;
+    text-decoration: none;
+  }
+}
+
+.main-title {
+  font-size: xx-large;
+  margin: auto;
+  padding: 1.5rem;
+  width: 1504px;
 }
 
 //Bootstrap-style spinner
