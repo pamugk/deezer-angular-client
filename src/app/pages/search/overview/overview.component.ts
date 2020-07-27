@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
 
 @Component({
-  selector: 'app-overview',
+  selector: 'search-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss']
 })

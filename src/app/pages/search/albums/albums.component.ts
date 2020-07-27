@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-albums',
+  selector: 'search-albums',
   templateUrl: './albums.component.html',
   styleUrls: ['./albums.component.scss']
 })

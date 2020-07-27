@@ -41,7 +41,7 @@ export class SearchComponent implements OnInit {
       this.deezer.searchArtists(request, (artists) => this.overview.artists = artists);
       this.deezer.searchPlaylists(request, (playlists) => this.overview.playlists = playlists);
       this.deezer.searchRadios(request, (radios) => this.overview.radios = radios);
-      this.deezer.searchTracks(request, (tracks) => this.overview.tracks = tracks);
+      this.deezer.searchTracks({ ...request, limit: 6 }, (tracks) => this.overview.tracks = tracks);
       this.deezer.searchUsers(request, (users) => this.overview.users = users);
     });
   }

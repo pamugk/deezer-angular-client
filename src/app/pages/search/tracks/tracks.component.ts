@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tracks',
+  selector: 'search-tracks',
   templateUrl: './tracks.component.html',
   styleUrls: ['./tracks.component.scss']
 })

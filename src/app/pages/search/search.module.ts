@@ -13,7 +13,6 @@ import { ChannelsComponent } from './channels/channels.component';
 import { UsersComponent } from './users/users.component';
 import { SearchService } from './search.service';
 
-
 @NgModule({
   declarations: [
     SearchComponent,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-channels',
+  selector: 'search-channels',
   templateUrl: './channels.component.html',
   styleUrls: ['./channels.component.scss']
 })
