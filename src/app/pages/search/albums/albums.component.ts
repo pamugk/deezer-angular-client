@@ -25,6 +25,7 @@ export class AlbumsComponent implements OnInit {
       q: this.overview.query,
       order: SearchOrdering.RANKING,
       limit: this.limit,
+      index:this.index,
       strict: Strictness.ON
     };
   } 

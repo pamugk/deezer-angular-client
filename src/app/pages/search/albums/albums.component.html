@@ -1,6 +1,6 @@
 <spinner *ngIf="!albums; else content"></spinner>
 <ng-template #content>
-    <section class="section" (onscroll)="onScroll()">
+    <section class="section">
         <h1 class="header">Альбомов: {{albums.total}}</h1>
         <spinner *ngIf="!albums.data; else results"></spinner>
         <ng-template #results>

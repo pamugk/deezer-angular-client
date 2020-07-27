@@ -1,1 +1,16 @@
-<p>playlists works!</p>
+<spinner *ngIf="!playlists; else content"></spinner>
+<ng-template #content>
+    <section class="section">
+        <h1 class="header">Плейлистов: {{playlists.total}}</h1>
+        <spinner *ngIf="!playlists.data; else results"></spinner>
+        <ng-template #results>
+            <button class="nav-btn" *ngIf="playlists.prev" (click)="prev()">
+                <span class="fas fa-arrow-circle-up"></span>
+            </button>
+            <playlist-list [playlists]="playlists.data"></playlist-list>
+            <button class="nav-btn" *ngIf="playlists.next" (click)="next()">
+                <span class="fas fa-arrow-circle-down"></span>
+            </button>
+        </ng-template>
+    </section>
+</ng-template>

@@ -1,1 +1,16 @@
-<p>artists works!</p>
+<spinner *ngIf="!artists; else content"></spinner>
+<ng-template #content>
+    <section class="section">
+        <h1 class="header">Исполнителей: {{artists.total}}</h1>
+        <spinner *ngIf="!artists.data; else results"></spinner>
+        <ng-template #results>
+            <button class="nav-btn" *ngIf="artists.prev" (click)="prev()">
+                <span class="fas fa-arrow-circle-up"></span>
+            </button>
+            <artist-list [artists]="artists.data"></artist-list>
+            <button class="nav-btn" *ngIf="artists.next" (click)="next()">
+                <span class="fas fa-arrow-circle-down"></span>
+            </button>
+        </ng-template>
+    </section>
+</ng-template>

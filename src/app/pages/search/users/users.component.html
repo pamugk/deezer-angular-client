@@ -1,1 +1,16 @@
-<p>users works!</p>
+<spinner *ngIf="!users; else content"></spinner>
+<ng-template #content>
+    <section class="section" (onscroll)="onScroll()">
+        <h1 class="header">Пользователей: {{users.total}}</h1>
+        <spinner *ngIf="!users.data; else results"></spinner>
+        <ng-template #results>
+            <button class="nav-btn" *ngIf="users.prev" (click)="prev()">
+                <span class="fas fa-arrow-circle-up"></span>
+            </button>
+            <user-list [users]="users.data"></user-list>
+            <button class="nav-btn" *ngIf="users.next" (click)="next()">
+                <span class="fas fa-arrow-circle-down"></span>
+            </button>
+        </ng-template>
+    </section>
+</ng-template>

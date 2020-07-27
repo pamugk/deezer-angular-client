@@ -1,1 +1,16 @@
-<p>channels works!</p>
+<spinner *ngIf="!channels; else content"></spinner>
+<ng-template #content>
+    <section class="section">
+        <h1 class="header">Каналов: {{channels.total}}</h1>
+        <spinner *ngIf="!channels.data; else results"></spinner>
+        <ng-template #results>
+            <button class="nav-btn" *ngIf="channels.prev" (click)="prev()">
+                <span class="fas fa-arrow-circle-up"></span>
+            </button>
+            <channel-list [channels]="channels.data"></channel-list>
+            <button class="nav-btn" *ngIf="channels.next" (click)="next()">
+                <span class="fas fa-arrow-circle-down"></span>
+            </button>
+        </ng-template>
+    </section>
+</ng-template>
