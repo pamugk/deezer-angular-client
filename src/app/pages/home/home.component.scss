@@ -1,4 +1,4 @@
-@import '../../../colors.scss';
+@import 'src/colors.scss';
 
 .danger-message {
     @include gradient(to bottom right, $multicolor-red);

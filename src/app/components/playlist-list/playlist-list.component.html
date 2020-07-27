@@ -1,0 +1,11 @@
+<ul class="card-list">
+    <li class="card" *ngFor="let playlist of playlists">
+        <img alt="{{playlist.title}}" class="image" src="{{playlist.picture_medium}}" height="264" width="264">
+        <h2>
+            <a class="card-header" routerLink="/playlist/{{playlist.id}}">
+                {{playlist.title}}
+            </a>
+        </h2>
+        <span class="card-info">Треков: {{playlist.nb_tracks}}</span>
+    </li>
+</ul>

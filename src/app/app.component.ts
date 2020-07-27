@@ -20,7 +20,9 @@ export class AppComponent {
   }
 
   startSearch() {
-    if (this.search)
+    if (this.search) {
       this.router.navigate(["/search", this.search]);
+      this.search = "";
+    }
   }
 }

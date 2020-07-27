@@ -1,0 +1,10 @@
+<ul class="card-list">
+    <li class="card-centered" *ngFor="let user of users">
+        <img alt="{{user.name}}" class="card-image-rounded" src="{{user.picture_medium}}" height="264" width="264">
+        <h2>
+            <a class="card-header" routerLink="/user/{{user.id}}">
+                {{user.name}}
+            </a>
+        </h2>
+    </li>
+</ul>

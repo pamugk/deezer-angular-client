@@ -1,77 +1,10 @@
-@import '../../../../colors.scss';
+@import 'src/colors.scss';
 
 :host {
     display: flex;
     flex: auto;
     flex-direction: column;
     font-size: inherit;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    margin-left: 2.125rem;
-    margin-top: 1.5rem;
-    max-width: min-content;
-
-    &-centered {
-        @extend .card;
-        align-items: center;
-    }
-
-    &-header {
-        color: $main-flat-black;
-        font-size: smaller;
-        font-weight: lighter;
-        text-decoration: none;
-    }
-
-    &-header:hover {
-        text-decoration: underline;
-    }
-
-    &-info {
-        color: $main-flat-grey;
-    }
-}
-
-.card-centered .card-header {
-    text-align: center;
-}
-
-.card-info a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.card-info a:hover {
-    text-decoration: underline;
-}
-
-.card-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    margin-left: -2.125rem;
-    padding: 0;
-}
-
-.explicit-warning {
-    border: thin solid $main-flat-grey;
-    color: $main-flat-grey;
-    display: block;
-    margin-top: 0.375rem;
-    padding: 0.125rem 0.375rem;
-    width: max-content;
-}
-
-.image {
-    height: 264px;
-    width: 264px;
-
-    &-rounded {
-        border-radius: 50%;
-    }
 }
 
 .section {

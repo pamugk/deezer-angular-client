@@ -1,4 +1,4 @@
-@import '../../../colors.scss';
+@import 'src/colors.scss';
 
 :host {
     display: flex;
@@ -31,12 +31,13 @@
 }
 
 .tab:hover {
+    border-bottom: medium solid $main-flat-black;
     color: $main-flat-black;
 }
 
 .tab-active {
-    color: $main-flat-black;
     border-bottom: medium solid $main-flat-pink;
+    color: $main-flat-black;
 }
 
 .tab-container {
@@ -46,19 +47,3 @@
 .tab-container + .tab-container {
     margin-left: 2.75rem;
 }
-
-//Bootstrap-style spinner
-@keyframes spinner {
-    to { transform: rotate(359deg); }
-  }
-    
-  .spinner {
-    animation: spinner .75s linear infinite;
-    border: .25em solid $main-flat-pink;
-    border-right-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    height: 2rem;
-    margin: auto;
-    width: 2rem;
-  }

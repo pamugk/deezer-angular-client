@@ -16,6 +16,7 @@ import { ProfileModule } from './pages/profile/profile.module';
 import { SearchModule } from './pages/search/search.module';
 
 import { DataModule } from './data/data.module';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,8 @@ import { DataModule } from './data/data.module';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    
+    ComponentsModule,
 
     AppRoutingModule,
     DataModule,

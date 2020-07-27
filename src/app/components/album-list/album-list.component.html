@@ -1,0 +1,12 @@
+<ul class="card-list">
+    <li class="card" *ngFor="let album of albums">
+        <img alt="{{album.title}}" class="card-image" src="{{album.cover_medium}}" height="264" width="264">
+        <h2>
+            <a class="card-header" routerLink="/album/{{album.id}}">
+                {{album.title}}
+            </a>
+        </h2>
+        <span class="card-info">от <a routerLink="/album/{{album.artist.id}}">{{album.artist.name}}</a></span>
+        <span class="card-explicit-warning" *ngIf="album.explicit_lyrics">EXPLICIT</span>
+    </li>
+</ul>

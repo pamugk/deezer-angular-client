@@ -28,18 +28,7 @@
                 <span>Альбомы </span><span class="fas fa-angle-right"></span>
             </a>
         </h1>
-        <ul class="card-list">
-            <li class="card" *ngFor="let album of overview.albums.data">
-                <img alt="{{album.title}}" class="image" src="{{album.cover_medium}}" height="264" width="264">
-                <h2>
-                    <a class="card-header" routerLink="/album/{{album.id}}">
-                        {{album.title}}
-                    </a>
-                </h2>
-                <span class="card-info">от <a routerLink="/album/{{album.artist.id}}">{{album.artist.name}}</a></span>
-                <span class="explicit-warning" *ngIf="album.explicit_lyrics">EXPLICIT</span>
-            </li>
-        </ul>
+        <album-list [albums]="overview.albums.data"></album-list>
     </section>
     <section class="section" *ngIf="overview.hasPlaylists()">
         <h1>
@@ -47,17 +36,7 @@
                 <span>Плейлисты </span><span class="fas fa-angle-right"></span>
             </a>
         </h1>
-        <ul class="card-list">
-            <li class="card" *ngFor="let playlist of overview.playlists.data">
-                <img alt="{{playlist.title}}" class="image" src="{{playlist.picture_medium}}" height="264" width="264">
-                <h2>
-                    <a class="card-header" routerLink="/playlist/{{playlist.id}}">
-                        {{playlist.title}}
-                    </a>
-                </h2>
-                <span class="card-info">Треков: {{playlist.nb_tracks}}</span>
-            </li>
-        </ul>
+        <playlist-list [playlists]="overview.playlists.data"></playlist-list>
     </section>
     <section class="section" *ngIf="overview.hasRadios()">
         <h1>
@@ -65,16 +44,7 @@
                 <span>Миксы </span><span class="fas fa-angle-right"></span>
             </a>pdxint
         </h1>
-        <ul class="card-list">
-            <li *ngFor="let radio of overview.radios.data">
-                <img alt="{{radio.name}}" class="image" src="{{radio.picture_medium}}" height="264" width="264">
-                <h2>
-                    <a class="card-header" routerLink="/radio/{{radio.id}}">
-                        {{radio.title}}
-                    </a>
-                </h2>
-            </li>
-        </ul>
+        <radio-list [radios]="overview.radios.data"></radio-list>
     </section>
     <section class="section" *ngIf="overview.hasArtists()">
         <h1>
@@ -82,17 +52,7 @@
                 <span>Исполнители </span><span class="fas fa-angle-right"></span>
             </a>
         </h1>
-        <ul class="card-list">
-            <li class="card-centered" *ngFor="let artist of overview.artists.data">
-                <img alt="{{artist.name}}" class="image-rounded" src="{{artist.picture_medium}}" height="264" width="264">
-                <h2>
-                    <a class="card-header" routerLink="/artist/{{artist.id}}">
-                        {{artist.name}}
-                    </a>
-                </h2>
-                <span class="card-info">Поклонников: {{artist.nb_fan}}</span>
-            </li>
-        </ul>
+        <artist-list [artists]="overview.artists.data"></artist-list>
     </section>
     <section class="section" *ngIf="overview.hasUsers()">
         <h1>
@@ -100,15 +60,6 @@
                 <span>Пользователи </span><span class="fas fa-angle-right"></span>
             </a>
         </h1>
-        <ul class="card-list">
-            <li class="card-centered" *ngFor="let user of overview.users.data">
-                <img alt="{{user.name}}" class="image-rounded" src="{{user.picture_medium}}" height="264" width="264">
-                <h2>
-                    <a class="card-header" routerLink="/user/{{user.id}}">
-                        {{user.name}}
-                    </a>
-                </h2>
-            </li>
-        </ul>
+        <user-list [users]="overview.users.data"></user-list>
     </section>
 </ng-template>
