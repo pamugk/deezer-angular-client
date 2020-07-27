@@ -37,7 +37,7 @@ export class ChannelsComponent implements OnInit {
   prev():void {
     this.channels.data = undefined;
     this.index -= this.limit;
-    this.deezer.searchAlbums(this.request(), (albuchannelsms) => this.channels = channels);
+    this.deezer.searchAlbums(this.request(), (channels) => this.channels = channels);
   }
 
   next():void {

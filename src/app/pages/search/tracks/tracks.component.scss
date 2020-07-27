@@ -1,0 +1,51 @@
+@import 'src/colors.scss';
+
+:host {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    font-size: inherit;
+}
+
+.header {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: $main-flat-black;
+    font-size: xx-large;
+    margin: 1rem 0;
+}
+
+.nav-btn:hover {
+    color: $main-flat-pink;
+}
+
+.section {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 1504px;
+}
+
+.track {
+    border-bottom: thin solid $main-flat-grey;
+    padding: 1rem;
+
+    &-duration {
+        color: $main-flat-grey;
+    }
+}
+
+.track a {
+    color: $main-flat-black;
+    text-decoration: none;
+}
+
+.track a:hover {
+    color: $main-flat-pink;
+}

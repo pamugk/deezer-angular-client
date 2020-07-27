@@ -1,1 +1,37 @@
-<p>tracks works!</p>
+<spinner *ngIf="!tracks; else content"></spinner>
+<ng-template #content>
+    <section class="section" (onscroll)="onScroll()">
+        <h1 class="header">Треков: {{tracks.total}}</h1>
+        <spinner *ngIf="!tracks.data; else results"></spinner>
+        <ng-template #results>
+            <button class="nav-btn" *ngIf="tracks.prev" (click)="prev()">
+                <span class="fas fa-arrow-circle-up"></span>
+            </button>
+            <table class="tracks">
+                <thead>
+                    <th></th>
+                    <th>ТРЕК</th>
+                    <th></th>
+                    <th>ИСПОЛНИТЕЛЬ</th>
+                    <th>АЛЬБОМ</th>
+                    <th>ПРОДОЛЖИТЕЛЬНОСТЬ</th>
+                    <th>ПОПУЛЯРНОСТЬ</th>
+                </thead>
+                <tbody>
+                    <tr class="track" *ngFor="let track of tracks.data">
+                        <td><img src="{{track.album.cover_small}}" height="28" width="28"></td>
+                        <td class="track-title"><a routerLink="/track/{{track.id}}">{{track.title}}</a></td>
+                        <td class="explicit-warning" *ngIf="track.explicit_lyrics"><span>EXPLICIT</span></td>
+                        <td class="track-artist"><a routerLink="/artist/{{track.artist.id}}">{{track.artist.name}}</a></td>
+                        <td class="track-album"><a routerLink="/album/{{track.album.id}}">{{track.album.title}}</a></td>
+                        <td class="track-duration">{{track.duration / 60 | number: '2.0-0'}}:{{track.duration % 60 | number: '2.0-0'}}</td>
+                        <td>{{track.rank / 100000 | number: '1.0-2'}}/10</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="nav-btn" *ngIf="tracks.next" (click)="next()">
+                <span class="fas fa-arrow-circle-down"></span>
+            </button>
+        </ng-template>
+    </section>
+</ng-template>
