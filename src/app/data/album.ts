@@ -2,6 +2,7 @@ import { Artist } from "./artist";
 import { Explicity } from "./explicity.enum";
 import { Genre } from "./genre";
 import { Track } from "./track";
+import { SearchResult } from './search-result';
 
 export class Album {
     id: number; //The Deezer album id
@@ -31,5 +32,5 @@ export class Album {
     explicit_content_cover:	Explicity; //The explicit cover values
     contributors:	Array<Artist>; //Return a list of contributors on the album
     artist:	Artist; //Artist object containing : id, name, picture, picture_small, picture_medium, picture_big, picture_xl
-    tracks:	Array<Track>; //List of track
+    tracks:	SearchResult<Track>; //List of track
 }

@@ -16,6 +16,6 @@ export class ChannelsComponent implements OnInit {
   constructor(private deezer: DeezerService) { }
 
   ngOnInit(): void {
-    this.deezer.getChannels((channels) => this.channels = channels);
+    this.deezer.requestChannels((channels) => this.channels = channels);
   }
 }

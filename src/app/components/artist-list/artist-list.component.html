@@ -2,7 +2,7 @@
     <li class="card-centered" *ngFor="let artist of artists">
         <img alt="{{artist.name}}" class="card-image-rounded" src="{{artist.picture_medium}}" height="264" width="264">
         <h2>
-            <a class="card-header" routerLink="/artist/{{artist.id}}">
+            <a class="card-header" [routerLink]="['/artist', artist.id]">
                 {{artist.name}}
             </a>
         </h2>

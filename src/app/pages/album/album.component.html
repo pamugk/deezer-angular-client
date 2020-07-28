@@ -1,1 +1,64 @@
-<p>album works!</p>
+<spinner *ngIf="!album; else content"></spinner>
+<ng-template #content>
+    <section>
+        <div class="album">
+            <img class="album-cover" src="{{album.cover_medium}}" height="264" width="264">
+            <span class="card-explicit-warning" *ngIf="album.explicit_lyrics">EXPLICIT</span>
+            <h1 class="album-title">{{album.title}}</h1>
+            <div class="album-artist">
+                <img class="album-artist-image" src="{{album.artist.picture_small}}" height="28" width="28">
+                <a class="album-artist-name" routerLink="/artist/{{album.artist.id}}">{{album.artist.name}}</a>
+            </div>
+            <ul class="album-info">
+                <li>Треков: {{album.nb_tracks}}</li>
+                <li>{{album.duration}}</li>
+                <li>{{album.release_date | date : 'dd.MM.yyyy'}}</li>
+                <li>Поклонников: {{album.fans}}</li>
+            </ul>
+        </div>
+        <spinner *ngIf="!tracks || tracks.next; else tracklist"></spinner>
+        <ng-template #tracklist>
+            <table class="tracks">
+                <thead>
+                    <th>#</th>
+                    <th>ТРЕК</th>
+                    <th></th>
+                    <th>ДЛИТЕЛЬНОСТЬ</th>
+                    <th>ПОПУЛЯРНОСТЬ</th>
+                </thead>
+                <tbody>
+                    <tr class="track" *ngFor="let track of tracks.data">
+                        <td>{{track.track_position}}</td>
+                        <td class="track-title"><a routerLink="/track/{{track.id}}">{{track.title}}</a></td>
+                        <td class="explicit-warning" *ngIf="track.explicit_lyrics"><span>EXPLICIT</span></td>
+                        <td class="track-duration">{{track.duration / 60 | number: '2.0-0'}}:{{track.duration % 60 | number: '2.0-0'}}</td>
+                        <td>{{track.rank / 100000 | number: '1.0-2'}}/10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+        <span>{{album.release_date | date : 'yyyy'}} | {{album.label}}</span>
+    </section>
+    <section *ngIf="artistDiscography">
+        <h2>Дискография</h2>
+        <album-list [albums]="artistDiscography"></album-list>
+    </section>
+    <section *ngIf="artistRelated">
+        <h2>Похожие исполнители</h2>
+        <artist-list [artists]="artistRelated"></artist-list>
+    </section>
+    <section>
+        <h2>Комментарии</h2>
+        <spinner *ngIf="!comments; else albumComments"></spinner>
+        <ng-template #albumComments>
+            <ul>
+                <li *ngFor="let comment of comments">
+                    <img src="{{comment.author.picture_small}}" height="28" width="28">
+                    <h3>{{comment.author.name}}</h3>
+                    <span>{{comment.text}}</span>
+                    <span>{{comment.date | date}}</span>
+                </li>
+            </ul>
+        </ng-template>
+    </section>
+</ng-template>

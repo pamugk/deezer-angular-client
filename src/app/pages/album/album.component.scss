@@ -1,0 +1,65 @@
+@import 'src/colors.scss';
+
+:host {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+}
+
+.album {
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-template-columns: max-content auto;
+    grid-template-rows: min-content min-content min-content auto min-content;
+    margin: 1.5rem 0;
+
+    &-artist {
+        display: flex;
+        align-items: center;
+
+        &-image {
+            border-radius: 50%;
+        }
+
+        &-name {
+            color: $main-flat-grey;
+            margin-left: 0.5rem;
+            text-decoration: none;
+        }
+
+        &-name:hover {
+            color: $main-flat-pink;
+        }
+    }
+
+    &-cover {
+        grid-row-start: 1;
+        grid-row-end: 6;
+    }
+
+    &-info {
+        color: $main-flat-grey;
+        display: flex;
+        grid-column: 2;
+        grid-row: 5;
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        padding-bottom: 0.25rem;
+    }
+    
+    &-info li + li::before {
+        content: "·";
+        margin: 0 5px;
+    }
+
+    &-title {
+        font-size: xx-large;
+        font-weight: bold;
+    }
+}
+
+section {
+    margin: 0 auto;
+    width: 1504px;
+}

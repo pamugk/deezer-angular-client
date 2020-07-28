@@ -7,6 +7,8 @@ import { RadioListComponent } from './radio-list/radio-list.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { CommentListComponent } from './comment-list/comment-list.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { SpinnerComponent } from './spinner/spinner.component';
     PlaylistListComponent,
     RadioListComponent,
     SpinnerComponent,
-    UserListComponent
+    UserListComponent,
+    CommentListComponent
   ],
   imports: [
     CommonModule,
-    DataModule
+    DataModule,
+    RouterModule
   ],
   exports: [
     AlbumListComponent,
