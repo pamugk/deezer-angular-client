@@ -9,25 +9,28 @@ import { UserListComponent } from './user-list/user-list.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 import { RouterModule } from '@angular/router';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
     AlbumListComponent,
-    ArtistListComponent, 
+    ArtistListComponent,
+    CommentListComponent, 
     PlaylistListComponent,
     RadioListComponent,
     SpinnerComponent,
-    UserListComponent,
-    CommentListComponent
+    UserListComponent
   ],
   imports: [
     CommonModule,
     DataModule,
-    RouterModule
+    RouterModule,
+    PipesModule
   ],
   exports: [
     AlbumListComponent,
-    ArtistListComponent, 
+    ArtistListComponent,
+    CommentListComponent, 
     PlaylistListComponent,
     RadioListComponent,
     SpinnerComponent,

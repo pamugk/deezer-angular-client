@@ -54,14 +54,7 @@
         <h2>Комментарии</h2>
         <spinner *ngIf="!comments; else albumComments"></spinner>
         <ng-template #albumComments>
-            <ul>
-                <li *ngFor="let comment of comments">
-                    <img src="{{comment.author.picture_small}}" height="28" width="28">
-                    <h3>{{comment.author.name}}</h3>
-                    <span>{{comment.text}}</span>
-                    <span>{{comment.date | date}}</span>
-                </li>
-            </ul>
+            <comment-list [comments]="comments"></comment-list>
         </ng-template>
     </section>
 </ng-template>

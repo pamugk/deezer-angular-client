@@ -1,1 +1,12 @@
-<p>comment-list works!</p>
+<ul class="comments">
+    <li class="item" *ngFor="let comment of comments">
+        <img class="author-avatar" src="{{comment.author.picture_small}}" height="32" width="32">
+        <div class="comment">
+            <div class="comment-header">
+                <span class="comment-author">{{comment.author.name}}</span>
+                <span>{{comment.date | timestamp | date:'dd.MM.yyyy'}}</span>
+            </div>
+            <span>{{comment.text}}</span>
+        </div>
+    </li>
+</ul>
