@@ -13,6 +13,7 @@ import { RadiosComponent } from './radios/radios.component';
 import { ChannelsComponent } from './channels/channels.component';
 import { UsersComponent } from './users/users.component';
 import { SearchService } from './search.service';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SearchService } from './search.service';
   imports: [
     CommonModule,
     RouterModule,
-    ComponentsModule
+    ComponentsModule,
+    PipesModule
   ],
   exports: [
     SearchComponent

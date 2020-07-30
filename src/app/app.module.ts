@@ -17,6 +17,7 @@ import { SearchModule } from './pages/search/search.module';
 
 import { DataModule } from './data/data.module';
 import { ComponentsModule } from './components/components.module';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ComponentsModule } from './components/components.module';
     BrowserAnimationsModule,
     FormsModule,
     
+    PipesModule,
     ComponentsModule,
 
     AppRoutingModule,

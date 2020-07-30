@@ -16,7 +16,7 @@ import { Track } from 'src/app/data/track';
 export class AlbumComponent implements OnInit {
   id: number;
   album: Album;
-  tracks: SearchResult<Track>;
+  disks: Map<number, Array<Track>>;
   artistDiscography: Array<Album>;
   artistRelated: Array<Artist>;
   comments: Array<Comment>;
@@ -25,7 +25,9 @@ export class AlbumComponent implements OnInit {
     private changeDetection: ChangeDetectorRef,
     private route: ActivatedRoute,
     private deezer: DeezerService
-  ) { }
+  ) { 
+    this.disks = new Map<number, Array<Track>>();
+  }
 
   ngOnInit(): void {
     this.route.paramMap.pipe(
@@ -39,7 +41,13 @@ export class AlbumComponent implements OnInit {
 
   private recieveAlbum(album:Album):void {
     this.album = album;
-    this.deezer.requestAlbumTracks(this.id, this.recieveTracks.bind(this));
+
+    this.deezer.requestAlbumTracks(
+      this.id, 
+      this.recieveTracks.bind(this), 
+      { limit: album.nb_tracks }
+    );
+
     this.deezer.requestArtistDiscography(
       album.artist.id, 
       (discography) => {
@@ -49,6 +57,7 @@ export class AlbumComponent implements OnInit {
       },
       { limit: 10 }
     );
+
     this.deezer.requestArtistRelated(
       album.artist.id,
       (related) => {
@@ -57,6 +66,7 @@ export class AlbumComponent implements OnInit {
       },
       { limit: 10 }
     );
+
     this.deezer.requestAlbumComments(
       this.id, 
       (comments) => {
@@ -66,14 +76,14 @@ export class AlbumComponent implements OnInit {
     );
   }
 
-  private recieveTracks(tracks: SearchResult<Track>): void {
-    if (!tracks)
-      this.tracks = tracks;
-    else {
-      this.tracks.data = this.tracks.data.concat(tracks.data)
-      this.tracks.next = tracks.next
-    }
-    if (tracks.next)
-      this.deezer.requestAlbumTracks(this.id, this.recieveTracks.bind(this));
+  private recieveTracks(tracks:SearchResult<Track>):void {
+    tracks.data.forEach(
+      track => {
+        if (!this.disks.has(track.disk_number))
+          this.disks.set(track.disk_number, new Array<Track>());
+        this.disks.get(track.disk_number).push(track);
+      }
+    );
+    this.changeDetection.detectChanges();
   }
 }
