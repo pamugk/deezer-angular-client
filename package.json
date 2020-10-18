@@ -1,11 +1,13 @@
 {
+  "homepage": "https://pamugk.github.io/deezer-angular-client/",
   "name": "deezer-angular-client",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "deploy": "ng deploy --base-href=/deezer-angular-client/"
   },
   "private": true,
   "dependencies": {
