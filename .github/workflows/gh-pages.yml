@@ -26,14 +26,3 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-
-    - name: Deploy
-      run: |
-        git config --global user.name $user_name
-        git config --global user.email $user_email
-        node_modules/@angular/cli/bin/ng deploy
-      env:
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        GH_TOKEN: ${{ secrets.TOKEN }}
-        repository: ${{ github.repository }}
