@@ -43,7 +43,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -91,15 +90,6 @@
             "exclude": [
               "**/node_modules/**"
             ]
-          }
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options":
-          {
-            "baseHref": "https://pamugk.github.io/deezer-angular-client/",
-            "name": "pamugk",
-            "email": "pamugk@gmail.com"
           }
         }
       }
