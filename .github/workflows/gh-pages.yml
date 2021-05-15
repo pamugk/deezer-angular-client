@@ -27,14 +27,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build
-      run: node_modules/@angular/cli/bin/ng build --configuration production
-
     - name: Deploy
       run: |
         git config --global user.name $user_name
         git config --global user.email $user_email
-        node_modules/@angular/cli/bin/ng deploy --build-target=test
+        node_modules/@angular/cli/bin/ng deploy --configuration=production
       env:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
