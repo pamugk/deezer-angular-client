@@ -31,9 +31,12 @@ jobs:
       run: node_modules/@angular/cli/bin/ng build --configuration production
 
     - name: Deploy
-      uses: s0/git-publish-subdir-action@develop
+      run: |
+        git config --global user.name $user_name
+        git config --global user.email $user_email
+        node_modules/@angular/cli/bin/ng deploy --build-target=test
       env:
-        REPO: self
-        BRANCH: gh-pages
-        FOLDER: dist/deezer-angular-client
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        GH_TOKEN: ${{ secrets.TOKEN }}
+        repository: ${{ github.repository }}
