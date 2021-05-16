@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Album } from 'src/app/data/album';
 import { ActivatedRoute } from '@angular/router';
-import { Comment } from 'src/app/data/comment';
 import { DeezerService } from 'src/app/deezer.service';
 import { switchMap } from 'rxjs/operators';
 import { Artist } from 'src/app/data/artist';
