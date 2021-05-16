@@ -2,7 +2,7 @@
     <li class="card" *ngFor="let playlist of playlists">
         <img alt="{{playlist.title}}" class="image" src="{{playlist.picture_medium}}" height="264" width="264">
         <h2>
-            <a class="card-header" [routerLink]="['/playlist', playlist.id]">
+            <a class="card-header" routerLink="['/playlist', playlist.id]">
                 {{playlist.title}}
             </a>
         </h2>

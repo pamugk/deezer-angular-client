@@ -7,19 +7,25 @@ import { RadioListComponent } from './radio-list/radio-list.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { SpinnerComponent } from './spinner/spinner.component';
-import { CommentListComponent } from './comment-list/comment-list.component';
 import { RouterModule } from '@angular/router';
 import { PipesModule } from '../pipes/pipes.module';
+import { TrackListComponent } from './track-list/track-list.component';
+import { TrackTableComponent } from './track-table/track-table.component';
+
+import { Carousel } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
     AlbumListComponent,
     ArtistListComponent,
-    CommentListComponent, 
     PlaylistListComponent,
     RadioListComponent,
     SpinnerComponent,
-    UserListComponent
+    TrackListComponent,
+    TrackTableComponent,
+    UserListComponent,
+
+    Carousel
   ],
   imports: [
     CommonModule,
@@ -30,11 +36,14 @@ import { PipesModule } from '../pipes/pipes.module';
   exports: [
     AlbumListComponent,
     ArtistListComponent,
-    CommentListComponent, 
     PlaylistListComponent,
     RadioListComponent,
     SpinnerComponent,
-    UserListComponent
+    TrackListComponent,
+    TrackTableComponent,
+    UserListComponent,
+
+    Carousel
   ]
 })
 export class ComponentsModule { }

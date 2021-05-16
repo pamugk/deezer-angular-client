@@ -1,8 +1,8 @@
 <ul class="card-list">
     <li *ngFor="let radio of radios">
-        <img alt="{{radio.name}}" class="image" src="{{radio.picture_medium}}" height="264" width="264">
+        <img alt="{{radio.title}}" class="image" src="{{radio.picture_medium}}" height="264" width="264">
         <h2>
-            <a class="card-header" [routerLink]="['/radio', radio.id]">
+            <a class="card-header" routerLink="['/radio', radio.id]">
                 {{radio.title}}
             </a>
         </h2>

@@ -28,10 +28,13 @@ export class UsersComponent implements OnInit {
       index:this.index,
       strict: Strictness.ON
     };
-  } 
+  }
 
   ngOnInit(): void {
     this.deezer.searchUsers(this.request(), (users) => this.users = users);
+  }
+
+  onScroll():void {
   }
 
   prev():void {

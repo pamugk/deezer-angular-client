@@ -1,0 +1,41 @@
+<spinner *ngIf="!disks && !tracks; else tracklist"></spinner>
+<ng-template #tracklist>
+    <table class="tracks">
+        <thead>
+            <tr *ngIf="albumSpecific">
+                <th class="track-position">#</th>
+                <th>ТРЕК</th>
+                <th></th>
+                <th>ДЛИТЕЛЬНОСТЬ</th>
+                <th>ПОПУЛЯРНОСТЬ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-template *ngIf="tracks; else diskContent">
+                <tr class="track" *ngFor="let track of tracks">
+                    <td *ngIf="albumSpecific" class="track-position">{{track.track_position}}</td>
+                    <td *ngIf="!albumSpecific"><img src="{{track.album.cover_small}}" height="28" width="28"></td>
+                    <td class="track-title"><a routerLink="/track/{{track.id}}">{{track.title}}</a></td>
+                    <td class="explicit-warning"><span *ngIf="track.explicit_lyrics">EXPLICIT</span></td>
+                    <td class="track-artist"><a routerLink="/artist/{{track.artist.id}}">{{track.artist.name}}</a></td>
+                    <td class="track-album" *ngIf="!albumSpecific"><a routerLink="/album/{{track.album.id}}">{{track.album.title}}</a></td>
+                    <td class="track-duration">{{track.duration | time | date: "mm:ss"}}</td>
+                    <td>{{track.rank / 100000 | number: '1.0-2'}}/10</td>
+                </tr>
+            </ng-template>
+            <ng-template #diskContent ngFor let-disk [ngForOf]="disks.keys()">
+                <span *ngIf="disks.size > 1">CD {{disk}}</span>
+                <tr class="track" *ngFor="let track of disks.get(disk)">
+                    <td *ngIf="albumSpecific" class="track-position">{{track.track_position}}</td>
+                    <td *ngIf="!albumSpecific"><img src="{{track.album.cover_small}}" height="28" width="28"></td>
+                    <td class="track-title"><a routerLink="/track/{{track.id}}">{{track.title}}</a></td>
+                    <td class="explicit-warning"><span *ngIf="track.explicit_lyrics">EXPLICIT</span></td>
+                    <td *ngIf="!albumSpecific" class="track-artist"><a routerLink="/artist/{{track.artist.id}}">{{track.artist.name}}</a></td>
+                    <td class="track-album" *ngIf="!albumSpecific"><a routerLink="/album/{{track.album.id}}">{{track.album.title}}</a></td>
+                    <td class="track-duration">{{track.duration | time | date: "mm:ss"}}</td>
+                    <td>{{track.rank / 100000 | number: '1.0-2'}}/10</td>
+                </tr>
+            </ng-template>
+        </tbody>
+    </table>
+</ng-template>

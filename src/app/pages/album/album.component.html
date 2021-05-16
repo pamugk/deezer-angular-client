@@ -16,45 +16,19 @@
                 <li>Поклонников: {{album.fans}}</li>
             </ul>
         </div>
-        <spinner *ngIf="!disks; else tracklist"></spinner>
-        <ng-template #tracklist>
-            <table class="tracks">
-                <thead>
-                    <th>#</th>
-                    <th>ТРЕК</th>
-                    <th></th>
-                    <th>ДЛИТЕЛЬНОСТЬ</th>
-                    <th>ПОПУЛЯРНОСТЬ</th>
-                </thead>
-                <tbody>
-                    <ng-template ngFor let-disk [ngForOf]="disks.keys()">
-                        <span *ngIf="disks.size > 1">CD {{disk}}</span>
-                        <tr class="track" *ngFor="let track of disks.get(disk)">
-                            <td>{{track.track_position}}</td>
-                            <td class="track-title"><a routerLink="/track/{{track.id}}">{{track.title}}</a></td>
-                            <td class="explicit-warning"><span *ngIf="track.explicit_lyrics">EXPLICIT</span></td>
-                            <td class="track-duration">{{track.duration | time | date: 'mm:ss'}}</td>
-                            <td>{{track.rank / 100000 | number: '1.0-2'}}/10</td>
-                        </tr>
-                    </ng-template>
-                </tbody>
-            </table>
-        </ng-template>
-        <span>{{album.release_date | date : 'yyyy'}} | {{album.label}}</span>
+        <track-table [albumSpecific]="true" [disks]="disks"></track-table>
+        <span class="album-label">{{album.release_date | date : 'yyyy'}} | {{album.label}}</span>
     </section>
     <section *ngIf="artistDiscography">
-        <h2>Дискография</h2>
-        <album-list [albums]="artistDiscography"></album-list>
+        <carousel>
+            <h2 header>Дискография</h2>
+            <album-list [albums]="artistDiscography" content></album-list>
+        </carousel>
     </section>
     <section *ngIf="artistRelated">
-        <h2>Похожие исполнители</h2>
-        <artist-list [artists]="artistRelated"></artist-list>
-    </section>
-    <section>
-        <h2>Комментарии</h2>
-        <spinner *ngIf="!comments; else albumComments"></spinner>
-        <ng-template #albumComments>
-            <comment-list [comments]="comments"></comment-list>
-        </ng-template>
+        <carousel>
+            <h2 header>Похожие исполнители</h2>
+            <artist-list [artists]="artistRelated" content></artist-list>
+        </carousel>
     </section>
 </ng-template>

@@ -19,13 +19,12 @@ export class AlbumComponent implements OnInit {
   disks: Map<number, Array<Track>>;
   artistDiscography: Array<Album>;
   artistRelated: Array<Artist>;
-  comments: Array<Comment>;
 
   constructor(
     private changeDetection: ChangeDetectorRef,
     private route: ActivatedRoute,
     private deezer: DeezerService
-  ) { 
+  ) {
     this.disks = new Map<number, Array<Track>>();
   }
 
@@ -43,13 +42,13 @@ export class AlbumComponent implements OnInit {
     this.album = album;
 
     this.deezer.requestAlbumTracks(
-      this.id, 
-      this.recieveTracks.bind(this), 
+      this.id,
+      this.recieveTracks.bind(this),
       { limit: album.nb_tracks }
     );
 
     this.deezer.requestArtistDiscography(
-      album.artist.id, 
+      album.artist.id,
       (discography) => {
         discography.data.forEach(album => album.artist = this.album.artist);
         this.artistDiscography = discography.data;
@@ -65,14 +64,6 @@ export class AlbumComponent implements OnInit {
         this.changeDetection.detectChanges();
       },
       { limit: 10 }
-    );
-
-    this.deezer.requestAlbumComments(
-      this.id, 
-      (comments) => {
-        this.comments = comments.data;
-        this.changeDetection.detectChanges();
-      }
     );
   }
 

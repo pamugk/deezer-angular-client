@@ -28,10 +28,13 @@ export class TracksComponent implements OnInit {
       index:this.index,
       strict: Strictness.ON
     };
-  } 
+  }
 
   ngOnInit(): void {
     this.deezer.searchTracks(this.request(), (tracks) => this.tracks = tracks);
+  }
+
+  onScroll():void {
   }
 
   prev():void {

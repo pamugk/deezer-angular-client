@@ -1,0 +1,47 @@
+@import 'src/colors.scss';
+
+:host {
+    margin: -2px;
+    overflow: hidden;
+    width: 1490px;
+}
+
+.carousel-header {
+    display: flex;
+
+    & > button:first-of-type {
+        margin-left: auto;
+    }
+}
+
+.carousel-inner {
+    transition-duration: .15s;
+    transition-timing-function: ease-in-out;
+}
+
+.iconed-button {
+    background-color: inherit;
+    border: none;
+    border-radius: 50%;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin-right: 1rem;
+    padding: 0.5rem;
+}
+
+.iconed-button:disabled {
+    color: $main-flat-light-grey;
+}
+
+.iconed-button:enabled {
+    cursor: pointer;
+}
+
+.iconed-button:enabled:hover {
+    color: $main-flat-pink;
+}
+
+.moved {
+    transform: translateX(-1490px);
+}

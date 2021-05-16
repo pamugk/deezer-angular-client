@@ -1,1 +1,25 @@
-<p>artist works!</p>
+<spinner *ngIf="!artist; else content"></spinner>
+<ng-template #content>
+    <section>
+        <div class="artist">
+            <img class="artist-picture" src="{{artist.picture_medium}}" height="264" width="264">
+            <h1 class="artist-name">{{artist.name}}</h1>
+        </div>
+    </section>
+    <section *ngIf="topTracks">
+        <h2>Популярные треки</h2>
+        <!--<track-list [tracks]="topTracks"></track-list>-->
+    </section>
+    <section *ngIf="artistDiscography">
+        <h2>Дискография</h2>
+        <album-list [albums]="artistDiscography"></album-list>
+    </section>
+    <section *ngIf="relatedPlaylists">
+        <h2>Плейлисты</h2>
+        <playlist-list [playlists]="relatedPlaylists"></playlist-list>
+    </section>
+    <section *ngIf="related">
+        <h2>Похожие исполнители</h2>
+        <artist-list [artists]="related"></artist-list>
+    </section>
+</ng-template>

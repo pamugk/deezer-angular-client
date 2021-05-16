@@ -33,24 +33,6 @@
     margin: 0;
 }
 
-.track {
-    border-bottom: thin solid $main-flat-grey;
-    padding: 1rem;
-
-    &-duration {
-        color: $main-flat-grey;
-    }
-}
-
-.track a {
-    color: $main-flat-black;
-    text-decoration: none;
-}
-
-.track a:hover {
-    color: $main-flat-pink;
-}
-
 .warning-message {
     @include gradient(to bottom right, $multicolor-yellow);
     color: $main-flat-grey;

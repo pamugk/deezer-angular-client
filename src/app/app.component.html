@@ -2,8 +2,8 @@
   <a class="deezer-logo-day"></a>
   <ul class="navlist">
     <li class="navitem">
-      <a 
-        class="navlink-primary" 
+      <a
+        class="navlink-primary"
         routerLink="/"
         routerLinkActive="navlink-active"
         [routerLinkActiveOptions]="{exact:true}"
@@ -17,9 +17,9 @@
       </a>
     </li>
     <li class="navitem" *ngIf="deezer.isLoggedIn()">
-      <a 
+      <a
         class="navlink-primary"
-        routerLink="/profile" 
+        routerLink="/profile"
         routerLinkActive="navlink-active"
         [routerLinkActiveOptions]="{exact:true}">
         <span><i class="fas fa-heart"></i>Избранное</span>
@@ -89,4 +89,4 @@
     <button class="iconed-button" type="button"><span class="fas fa-volume-up"></span></button>
     <button class="iconed-button" type="button"><span class="fas fa-sliders-h"></span></button>
   </div>
-</footer> 
+</footer>

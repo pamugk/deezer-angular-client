@@ -8,11 +8,11 @@ export class Track {
     title: string; //The track's full title
     title_short: string; //The track's short title
     title_version: string; //The track version
-    unseen: boolean; //The track unseen status	
+    unseen: boolean; //The track unseen status
     isrc: string; //The track isrc
     link: URL; //The url of the track on Deezer
     share: URL; //The share link of the track on Deezer
-    duration: Date; //The track's duration in seconds
+    duration: number; //The track's duration in seconds
     track_position: number; //The position of the track in its album
     disk_number: number; //The track's album's disk number
     rank: number; //The track's Deezer rank

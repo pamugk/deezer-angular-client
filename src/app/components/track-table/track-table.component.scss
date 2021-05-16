@@ -1,0 +1,40 @@
+@import 'src/colors.scss';
+
+.track {
+    border-bottom: thin solid $main-flat-grey;
+    padding: 1rem;
+
+    &-duration {
+        color: $main-flat-grey;
+    }
+
+    &-position {
+        padding-right: 1rem;
+        text-align: right;
+    }
+
+    &-title {
+        width: 65%;
+    }
+}
+
+.track a {
+    color: $main-flat-black;
+    text-decoration: none;
+}
+
+.track a:hover {
+    color: $main-flat-pink;
+}
+
+.tracks {
+    width: 100%;
+
+    & th {
+        text-align: left;
+    }
+
+    & tr {
+        box-shadow: 0 -1px;
+    }
+}

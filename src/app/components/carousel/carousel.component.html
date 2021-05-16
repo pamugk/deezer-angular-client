@@ -1,0 +1,8 @@
+<div class="carousel-header">
+    <ng-content select="[header]"></ng-content>
+    <button class="iconed-button" [disabled]="!moved"><span class="fas fa-angle-left" (click)="prevPage()"></span></button>
+    <button class="iconed-button" [disabled]="moved"><span class="fas fa-angle-right" (click)="nextPage()"></span></button>
+</div>
+<div class="carousel-inner" [ngClass]="{'moved': moved}">
+    <ng-content select="[content]"></ng-content>
+</div>

@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let track of tracks">
+        <span>от {{track.title}}</span>
+        <span *ngIf="track.explicit_lyrics">EXPLICIT</span>
+    </li>
+</ul>

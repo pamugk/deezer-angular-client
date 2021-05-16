@@ -8,19 +8,7 @@
                 <span>Треки </span><span class="fas fa-angle-right"></span>
             </a>
         </h1>
-        <table class="tracks">
-            <tbody>
-                <tr class="track" *ngFor="let track of overview.tracks.data">
-                    <td><img src="{{track.album.cover_small}}" height="28" width="28"></td>
-                    <td class="track-title"><a routerLink="/track/{{track.id}}">{{track.title}}</a></td>
-                    <td class="explicit-warning"><span *ngIf="track.explicit_lyrics">EXPLICIT</span></td>
-                    <td class="track-artist"><a routerLink="/artist/{{track.artist.id}}">{{track.artist.name}}</a></td>
-                    <td class="track-album"><a routerLink="/album/{{track.album.id}}">{{track.album.title}}</a></td>
-                    <td class="track-duration">{{track.duration | time | date: "mm:ss"}}</td>
-                    <td>{{track.rank / 100000 | number: '1.0-2'}}/10</td>
-                </tr>
-            </tbody>
-        </table>
+        <track-table [albumSpecific]="false" [tracks]="overview.tracks.data"></track-table>
     </section>
     <section class="section" *ngIf="overview.hasAlbums()">
         <h1>

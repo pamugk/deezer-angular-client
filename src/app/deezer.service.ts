@@ -78,6 +78,22 @@ export class DeezerService {
     DZ.api(`/artist/${id}/related`, 'GET', params, handler);
   }
 
+  requestArtistRelatedPlaylists(
+    id: number, 
+    handler: (this:void, relatedPlaylists: SearchResult<Playlist>) => void,
+    params: Search = new Search()
+  ):void {
+    DZ.api(`/artist/${id}/playlists`, 'GET', params, handler);
+  }
+
+  requestArtistTopTracks(
+    id: number, 
+    handler: (this:void, topTracks: SearchResult<Track>) => void,
+    params: Search = new Search()
+  ):void {
+    DZ.api(`/artist/${id}/top`, 'GET', params, handler);
+  }
+
   searchAlbums(query: Search, handler: (this: void, channels: SearchResult<Album>) => void):void {
     DZ.api('/search/album', 'GET', query, handler);
   }
