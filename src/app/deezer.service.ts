@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Album } from './data/album';
 import { Artist } from './data/artist';
 import { Chart } from './data/chart';
-import { Comment } from './data/comment';
 import { Editorial } from './data/editorial';
 import { Genre } from './data/genre';
 import { Playlist } from './data/playlist';
@@ -46,13 +45,9 @@ export class DeezerService {
     DZ.api(`/album/${id}`, handler);
   }
 
-  requestAlbumComments(id:number, handler: (this: void, comments: SearchResult<Comment>) => void):void {
-    DZ.api(`/album/${id}/comments`, handler);
-  }
-
   requestAlbumTracks(
-    id:number, 
-    handler: (this: void, comments: SearchResult<Track>) => void, 
+    id:number,
+    handler: (this: void, tracks: SearchResult<Track>) => void,
     params: Search = new Search()
   ):void {
     DZ.api(`/album/${id}/tracks`, 'GET', params, handler);
@@ -63,7 +58,7 @@ export class DeezerService {
   }
 
   requestArtistDiscography(
-    id: number, 
+    id: number,
     handler: (this:void, albums: SearchResult<Album>) => void,
     params: Search = new Search()
   ):void {
@@ -71,7 +66,7 @@ export class DeezerService {
   }
 
   requestArtistRelated(
-    id: number, 
+    id: number,
     handler: (this:void, relatedAritsts: SearchResult<Artist>) => void,
     params: Search = new Search()
   ):void {
@@ -79,7 +74,7 @@ export class DeezerService {
   }
 
   requestArtistRelatedPlaylists(
-    id: number, 
+    id: number,
     handler: (this:void, relatedPlaylists: SearchResult<Playlist>) => void,
     params: Search = new Search()
   ):void {
@@ -87,7 +82,7 @@ export class DeezerService {
   }
 
   requestArtistTopTracks(
-    id: number, 
+    id: number,
     handler: (this:void, topTracks: SearchResult<Track>) => void,
     params: Search = new Search()
   ):void {
