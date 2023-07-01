@@ -3,26 +3,22 @@ name: GitHub Pages CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [20.x]
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - uses: actions/checkout@v3
+    - name: All things angular
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@1.4.0
       with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Install dependencies
-      run: npm install
+        github_access_token: ${{ secrets.DEPLOY_TOKEN }}
+        build_configuration: production
+        base_href: /deezer-angular-client/
+        deploy_branch: gh-pages
+        angular_dist_build_folder: dist/deezer-angular-client
+        
+permissions:
+  contents: write
