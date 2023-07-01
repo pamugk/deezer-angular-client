@@ -10,9 +10,7 @@
 .section {
     display: flex;
     flex-direction: column;
-    margin: auto;
     padding: 1.5rem;
-    width: 1504px;
 
     &-header {
         color: $main-flat-black;

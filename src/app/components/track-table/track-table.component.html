@@ -11,7 +11,8 @@
             </tr>
         </thead>
         <tbody>
-            <ng-template *ngIf="tracks; else diskContent">
+            <ng-container *ngIf="tracks; then tracksContent else diskContent"></ng-container>
+            <ng-template #tracksContent>
                 <tr class="track" *ngFor="let track of tracks">
                     <td *ngIf="albumSpecific" class="track-position">{{track.track_position}}</td>
                     <td *ngIf="!albumSpecific"><img src="{{track.album.cover_small}}" height="28" width="28"></td>
@@ -23,7 +24,8 @@
                     <td>{{track.rank / 100000 | number: '1.0-2'}}/10</td>
                 </tr>
             </ng-template>
-            <ng-template #diskContent ngFor let-disk [ngForOf]="disks.keys()">
+            <ng-template #diskContent>
+              <ng-template ngFor let-disk [ngForOf]="disks.keys()">
                 <span *ngIf="disks.size > 1">CD {{disk}}</span>
                 <tr class="track" *ngFor="let track of disks.get(disk)">
                     <td *ngIf="albumSpecific" class="track-position">{{track.track_position}}</td>
@@ -35,6 +37,7 @@
                     <td class="track-duration">{{track.duration | time | date: "mm:ss"}}</td>
                     <td>{{track.rank / 100000 | number: '1.0-2'}}/10</td>
                 </tr>
+              </ng-template>>
             </ng-template>
         </tbody>
     </table>

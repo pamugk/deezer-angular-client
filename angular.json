@@ -33,6 +33,16 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "namedChunks": true,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false,
+              "budgets": []
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -68,10 +78,14 @@
             "browserTarget": "deezer-angular-client:build"
           },
           "configurations": {
+            "development": {
+              "browserTarget": "deezer-angular-client:build:development"
+            },
             "production": {
               "browserTarget": "deezer-angular-client:build:production"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
