@@ -1,5 +1,3 @@
-import { Url } from "url";
-
 export class Radio {
     id: number; //The radio deezer ID
     title: string; //The radio title
@@ -9,6 +7,6 @@ export class Radio {
     picture_small: URL; //The url of the radio picture in size small
     picture_medium: URL; //The url of the radio picture in size medium
     picture_big: URL; //The url of the radio picture in size big
-    picture_xl: URL; //The url of the radio picture in size xl	
+    picture_xl: URL; //The url of the radio picture in size xl
     tracklist: URL; //API Link to the tracklist of this radio
 }
